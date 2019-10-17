@@ -10,4 +10,4 @@ Atlanta Crime Mapping for CS7641
 
 -Aayush
 
--Kevin
+-Kevin, that's me
