@@ -24,6 +24,8 @@ def occurence_time(row):
 
 new_f['Shift Occurence'] = new_f.apply (lambda row: occurence_time (row),axis=1)
 
+new_f = new_f[ (new_f['Longitude'] >= -85) & (new_f['Longitude'] <= -84) ]
+
 
 
 new_f.to_csv("cobra-clean.csv", index=False)
