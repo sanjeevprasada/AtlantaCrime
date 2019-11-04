@@ -24,6 +24,17 @@ def occurence_time(row):
 
 new_f['Shift Occurence'] = new_f.apply (lambda row: occurence_time (row),axis=1)
 
+
+# Changes each date(YYYY-MM-DD) to day of the week(0: Monday through 6: Sunday)
+def day_of_week(row):
+    cur_date = row['Occur Date']
+    year, month, day = (int(x) for x in cur_date.split('-'))    
+    dt = datetime.date(year, month, day)
+    return(dt.weekday())
+  
+new_f['Day of Week'] = new_f.apply(lambda row: day_of_week (row), axis=1)
+#
+
 new_f = new_f[ (new_f['Longitude'] >= -84.5) & (new_f['Longitude'] <= -84.2)]
 new_f = new_f[ (new_f['Latitude'] >= 33.61) & (new_f['Latitude'] <= 33.92)]
 
