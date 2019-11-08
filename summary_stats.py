@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 import datetime
+startTime = datetime.datetime.now()
 
 # Read the data
 df = pd.read_csv("data/COBRA-2009-2018.csv")
@@ -67,12 +68,14 @@ def count_occurrences(local,month,day,shift):
 our_dict = {}
 for local in n_list:
 	our_dict[local] = {}
+
 	for month in months:
 		our_dict[local][month] = {}
 		for day in days:
 			our_dict[local][month][day] = {}
 			for shift in shifts:
 				our_dict[local][month][day][shift] = count_occurrences(local, month, day, shift)
+				print(our_dict[local][month][day][shift])
 
 
 # new_f.to_csv("cobra-summary.csv", index=False)
@@ -81,9 +84,10 @@ print(our_dict)
 csv_file = "stats.csv"
 try:
     with open(csv_file, 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+        writer = csv.DictWriter(csvfile)
         writer.writeheader()
         for data in our_dict:
             writer.writerow(data)
+    print(datetime.datetime.now() - startTime)
 except IOError:
     print("I/O error") 
