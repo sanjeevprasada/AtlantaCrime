@@ -1,13 +1,5 @@
-Atlanta Crime Mapping for CS7641
--hello my name is sanjeev
-
--Gabriel
-
--Abdurrahmane
+#Atlanta Crime Mapping for CS7641
+##Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
 
-...Reward, none
-
--Aayush
-
--Kevin, that's me
+After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft.
