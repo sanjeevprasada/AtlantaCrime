@@ -26,12 +26,12 @@ After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular cr
 
 ### Supervised algorithms preprocessed dataset
 
-Occur Date | Neighborhood |   UCR Literal       | Latitude | Longitude  | Shift Occurrence | 
- ------------- |:----------:|:----------:|:------------:|:-------------------:|:--------:|:---------:
- 2009-01-01 | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
- 2009-01-01 | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
- 2009-01-01 | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
- ...     | ... |    ...    | ...   | ... | ...    | ...
+Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift Occurrence 
+ -----------|:-----------:|:-------------------:|:--------:|:----------:|:----------------:
+ 2009-01-01 | Greenbriar  | LARCENY NON-VEHICLE | 33.69    | -84.49     |  Day
+ 2009-01-01 | Downtown    | LARCENY NON-VEHICLE | 33.75    | -84.39     |  Day
+ 2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
+ ...        | ...         |    ...              | ...      | ...        | ...  
 
  trying
 
