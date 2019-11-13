@@ -22,7 +22,7 @@ After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular cr
  090010930     | 2009-01-01 |    1145    | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
  090011083     | 2009-01-01 |    1330    | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
  090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
- ...     | ... |    ...    | ...   | ... | ...    | ...   
+ ...           |    ...     | ...        | ...          | ...                 | ...      | ...
 
 ### Supervised algorithms preprocessed dataset
 
@@ -31,10 +31,15 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  2009-01-01 | Greenbriar  | LARCENY NON-VEHICLE | 33.69    | -84.49     |  Day
  2009-01-01 | Downtown    | LARCENY NON-VEHICLE | 33.75    | -84.39     |  Day
  2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
- ...        | ...         |    ...              | ...      | ...        | ...  
+ ...        | ...         |    ...              | ...      | ...        |  ...  
 
- trying
-
+### Unsupervised algorithms
+Year  | Month|  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
+ -----|:----:|:-----:|:------------:|:----------:|:----------:|:----------:|----------:
+ 2009 | 1    |   1   | 3            | 0          |  15        |    58      |  48
+ 2009 | 1    |   2   | 4            | 0          |  15        |    46      |  73
+ 2009 | 1    |   3   | 5            | 1          |  21        |    37      |  56
+ ...  | ...  | ...   | ...          | 0          |  22        |    38      |  30       
 
 ## Approach
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful
