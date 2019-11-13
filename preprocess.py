@@ -15,6 +15,7 @@ new_f[['Beat','Useless']] = new_f['Beat'].str.split('.',expand=True)
 new_f = new_f.drop(columns = ['Useless', 'Shift Occurence'])
 
 new_f[['Neighborhood']] = new_f[['Neighborhood']].fillna(value='Null')
+new_f = new_f[new_f['Neighborhood']!='Null']
 
 def occurence_time(row):
 	if row['Occur Time'] < 800:
@@ -57,4 +58,4 @@ new_f = new_f[ (new_f['Latitude'] >= 33.61) & (new_f['Latitude'] <= 33.92)]
 new_f = new_f[ (new_f['Occur Date'] >= '2009-01-01') & (new_f['Occur Date'] <= '2018-12-31')]
 
 print(new_f)
-new_f.to_csv("cobra-clean2.csv", index=False)
+new_f.to_csv("cobra-clean2009.csv", index=False)
