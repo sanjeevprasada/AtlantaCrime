@@ -22,8 +22,11 @@ After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular cr
  090010930     | 2009-01-01 |    1145    | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
  090011083     | 2009-01-01 |    1330    | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
  090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
+ ...     | ... |    ...    | ...   | ... | ...    | ...   
 
 ### Crime Score preprocessed dataset
+
+
 
 ## Approach
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful
