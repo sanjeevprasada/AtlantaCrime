@@ -1,5 +1,5 @@
 # Atlanta Crime Mapping for CS7641 - Group 17
-#### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
+#### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada3
 
 ![Atlanta Pic](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
 
@@ -24,8 +24,16 @@ After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular cr
  090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
  ...     | ... |    ...    | ...   | ... | ...    | ...   
 
-### Crime Score preprocessed dataset
+### Supervised algorithms preprocessed dataset
 
+Occur Date | Neighborhood |   UCR Literal       | Latitude | Longitude  | Shift Occurrence | 
+ ------------- |:----------:|:----------:|:------------:|:-------------------:|:--------:|:---------:
+ 2009-01-01 | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
+ 2009-01-01 | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
+ 2009-01-01 | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
+ ...     | ... |    ...    | ...   | ... | ...    | ...
+
+ trying
 
 
 ## Approach
