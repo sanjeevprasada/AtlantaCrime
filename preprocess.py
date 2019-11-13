@@ -1,8 +1,11 @@
 import csv
 import pandas as pd
+import datetime
+
 df = pd.read_csv("data/COBRA-2009-2018.csv")
-keep_col = ['Occur Date', 'Occur Time', 'Beat', 'Location', 'Shift Occurence', 'UCR #', 'Neighborhood', 'NPU', 'Longitude', 'Latitude']
+keep_col = ['Occur Date', 'Occur Time', 'Beat', 'Location', 'Shift Occurence', 'UCR #', 'UCR Literal', 'Neighborhood', 'NPU', 'Longitude', 'Latitude']
 new_f = df[keep_col]
+#new_f.rename(columns = {'UCR Literal':'UCRLiteral'},inplace = True)
 
 # new_f = new_f['Beat'].fillna(0)
 print(new_f['Occur Time'].dtype)
@@ -33,12 +36,25 @@ def day_of_week(row):
     return(dt.weekday())
   
 new_f['Day of Week'] = new_f.apply(lambda row: day_of_week (row), axis=1)
-#
 
+#cat_list = new_f.UCRLiteral.unique()
+#print(cat_list)
+def crime_category(row):
+	cat = 0
+	if row['UCR Literal'] in ['HOMICIDE','MANSLAUGHTER']:
+		cat = 1
+	if row['UCR Literal'] in ['AGG ASSAULT','ROBBERY-PEDESTRIAN','ROBBERY-COMMERCIAL','ROBBERY-RESIDENCE']:
+		cat = 2
+	if row['UCR Literal'] in ['BURGLARY-RESIDENCE','BURGLARY-NONRES','AUTO THEFT']:
+		cat = 3
+	if row['UCR Literal'] in ['LARCENY-FROM VEHICLE','LARCENY-NON VEHICLE']:
+		cat = 4
+	return cat
+
+new_f['Crime Category'] = new_f.apply(lambda row: crime_category (row), axis=1)
 new_f = new_f[ (new_f['Longitude'] >= -84.5) & (new_f['Longitude'] <= -84.2)]
 new_f = new_f[ (new_f['Latitude'] >= 33.61) & (new_f['Latitude'] <= 33.92)]
+new_f = new_f[ (new_f['Occur Date'] >= '2009-01-01') & (new_f['Occur Date'] <= '2018-12-31')]
 
-
-
-
-new_f.to_csv("cobra-clean.csv", index=False)
+print(new_f)
+new_f.to_csv("cobra-clean2.csv", index=False)

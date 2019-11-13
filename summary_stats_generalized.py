@@ -60,10 +60,10 @@ d_list = new_f.OccurDate.unique()
 #stuff = dict((months, category) for month in months)
 #data_dict = dict((key, stuff) for key in n_list)
 def count_occurrences(date):
-	cat1 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal']== ('HOMICIDE' or 'MANSLAUGHTER'))])
-	cat2 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal']== ('AGG ASSAULT' or 'ROBBERY-PEDESTRIAN' or 'ROBBERY-COMMERCIAL' or 'ROBBERY-RESIDENCE'))])
-	cat3 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal']== ('BURGLARY-RESIDENCE' or 'BURGLARY-NONRES' or 'AUTO THEFT'))])
-	cat4 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal']== ('LARCENY-FROM VEHICLE' or 'LARCENY-NON VEHICLE'))])
+	cat1 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal'].isin(['HOMICIDE','MANSLAUGHTER']))])
+	cat2 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal'].isin(['AGG ASSAULT','ROBBERY-PEDESTRIAN','ROBBERY-COMMERCIAL','ROBBERY-RESIDENCE']))])
+	cat3 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal'].isin(['BURGLARY-RESIDENCE','BURGLARY-NONRES','AUTO THEFT']))])
+	cat4 = len(new_f[(new_f['OccurDate']==date) & (new_f['UCR Literal'].isin(['LARCENY-FROM VEHICLE','LARCENY-NON VEHICLE']))])
 	count = (cat1, cat2, cat3, cat4)
 	return count
 
