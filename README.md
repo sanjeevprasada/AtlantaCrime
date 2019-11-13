@@ -1,7 +1,7 @@
 # Atlanta Crime Mapping for CS7641 - Group 17
 #### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
-![Atlanta Pic](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg) </br>
+![Atlanta Pic](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
 
 ## Motivation
 In Atlanta, crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita,
@@ -16,8 +16,6 @@ these methods to Atlanta crime data and improving predictive model efficiency.
 After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft.
 
 ### Original Dataset
-
-
 
  Report Number | Occur Date | Occur Time | Neighborhood |   UCR Literal       | Latitude | Longitude 
  ------------- |:----------:|:----------:|:------------:|:-------------------:|:--------:|:---------:
