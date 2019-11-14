@@ -39,6 +39,13 @@ def day_of_week(row):
   
 new_f['Day of Week'] = new_f.apply(lambda row: day_of_week (row), axis=1)
 
+def year(row):
+    cur_date = row['Occur Date']
+    month, day, year = (int(x) for x in cur_date.split('/'))    
+    year = int(year)
+    return year
+
+new_f['Year'] = new_f.apply(lambda row: year(row), axis=1)
 #cat_list = new_f.UCRLiteral.unique()
 #print(cat_list)
 def crime_category(row):
@@ -56,6 +63,8 @@ def crime_category(row):
 new_f['Crime Category'] = new_f.apply(lambda row: crime_category (row), axis=1)
 new_f = new_f[ (new_f['Longitude'] >= -84.5) & (new_f['Longitude'] <= -84.2)]
 new_f = new_f[ (new_f['Latitude'] >= 33.61) & (new_f['Latitude'] <= 33.92)]
+new_f = new_f[ (new_f['Year'] == 19)]
+new_f = new_f.drop(['Year'],axis=1)
 #new_f = new_f[ (new_f['Occur Date'] >= '01/01/2019') & (new_f['Occur Date'] <= '9/23/2019')]
 
 print(new_f)
