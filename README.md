@@ -50,9 +50,17 @@ Our tech stack for the unsupervised methods were sklearn in Python. First, we pl
 
 + __Comment__ about what DBSCAN reduced set told us about our data and what the reduced set aimed to do.
 
-+ Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted. The 
++ Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted.
 
 ## Supervised Methods
+Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
+
+#### Metrics & Plots
+1. Decision Tree
+2. Random Forest
+3. Naive-Bayes Classifier
+4. Support Vector Machine
+5. Logistic Regression
 
 
 
