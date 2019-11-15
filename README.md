@@ -44,7 +44,7 @@ It is important to cluster based on location and time, as they are relevant feat
 ## Visualization
 Crime instensities across the city limits of Atlanta. 
 
-![Atlanta all categories visualization](https://imgur.com/a/7yUFcUk)
+![Atlanta all categories visualization](https://imgur.com/kk4YhHq)
 
 
 ![Category 1](https://sanjeevprasada.github.com/AtlantaCrime/master/images/visualization/Crime_intensities_category_1.png)
