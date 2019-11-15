@@ -70,7 +70,7 @@ def count_occurrences(date):
 our_dict = {}
 for date in d_list:
 	our_dict[date] = count_occurrences(date)
-	print(date)
+	#print(date)
 
 # for local in n_list:
 # 	our_dict[local] = {}
