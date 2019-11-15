@@ -31,7 +31,7 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
 
 ### Unsupervised algorithms
 Year  | Month|  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
- -----|:----:|:-----:|:------------:|:----------:|:----------:|:----------:|----------:
+ -----|:----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
  2009 | 1    |   1   | 3            | 0          |  15        |    58      |  48
  2009 | 1    |   2   | 4            | 0          |  15        |    46      |  73
  2009 | 1    |   3   | 5            | 1          |  21        |    37      |  56
