@@ -4,7 +4,7 @@ import time
 startTime = time.time()
 
 # Read the data
-df = pd.read_csv("data/COBRA-2009-2018.csv")
+df = pd.read_csv("data/COBRA-2019.csv")
 keep_col = ['Occur Date', 'Occur Time', 'UCR Literal', 'Neighborhood', 'Longitude', 'Latitude']
 
 new_f = df[keep_col]
@@ -34,21 +34,27 @@ new_f = new_f.drop(columns = ['OccurTime'])
 #     dt = datetime.date(year, month, day)
 #     return(dt.weekday())
 
+def year(row):
+    cur_date = row['OccurDate']
+    month, day, year = (int(x) for x in cur_date.split('/'))    
+    year = int(year)
+    return year
+
+new_f['Year'] = new_f.apply(lambda row: year(row), axis=1)
 # new_f['Day of Week'] = new_f.apply(lambda row: day_of_week (row), axis=1)
 # new_f['Month'] = new_f.apply(lambda row: print_month (row), axis=1)
 # new_f['Shift Occurence'] = new_f.apply (lambda row: occurence_time (row),axis=1)
-
 new_f = new_f[ (new_f['Longitude'] >= -84.5) & (new_f['Longitude'] <= -84.2)]
 new_f = new_f[ (new_f['Latitude'] >= 33.61) & (new_f['Latitude'] <= 33.92)]
 new_f = new_f.drop(columns = ['Longitude','Latitude'])
 
-new_f = new_f[ (new_f['OccurDate'] >= '2009-01-01') & (new_f['OccurDate'] <= '2018-12-31')]
+new_f = new_f[ (new_f['Year'] == 19)]# & (new_f['Year'] <= 18)]
+
 
 new_f = new_f.dropna(axis=0, subset=['Neighborhood','Neighborhood'])
-new_f.sort_values(by='OccurDate',inplace=True)
+#new_f.sort_values(by='OccurDate',inplace=True)
 #print(new_f['OccurDate'])
 
-#n_list = new_f.Neighborhood.unique()
 d_list = new_f.OccurDate.unique()
 n_list = new_f.Neighborhood.unique()
 #print(d_list)
@@ -69,14 +75,16 @@ def count_occurrences(local,date):
 	return count
 
 our_dict = {}
+#print(len(n_list))
 counter = 0
 for local in n_list:
 	counter+=1
 	print('Neighborhood #',counter,': ',local)
+	#print(our_dict)
 	our_dict[local] = {}
 	for date in d_list:
 		our_dict[local][date] = count_occurrences(local,date)
-		print(date)
+		#print(date)
 
 # for local in n_list:
 # 	our_dict[local] = {}
@@ -93,7 +101,7 @@ for local in n_list:
 
 endTime = time.time()
 duration = endTime-startTime
-# print(our_dict)
+print(our_dict)
 print('# Seconds: ',duration)
 print('# Minutes: ',duration/60)
 # csv_file = "stats.csv"
