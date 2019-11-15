@@ -1,7 +1,8 @@
 # Atlanta Crime Mapping for CS7641 - Group 17
 #### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
-![Atlanta Skyline](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
+![Atlanta Skyline]
+(http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
 
 ## Motivation
 In Atlanta, the overall crime rate is 108% higher than the national average. Crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita, Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively. Sufficient patrols in crime-heavy areas can be
@@ -43,16 +44,21 @@ It is important to cluster based on location and time, as they are relevant feat
 
 ## Visualization
 Crime instensities across the city limits of Atlanta. 
-![Atlanta all categories visualization](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities.png)
+![Atlanta all categories visualization]
+(https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities.png)
 
 
-![Category 1](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_1.png)
+![Category 1]
+(https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_1.png)
 
-![Category 2](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
+![Category 2]
+(https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
 
-![Category 3](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_3.png)
+![Category 3]
+(https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_3.png)
 
-![Category 4](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_4.png)
+![Category 4]
+(https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_4.png)
 
 
 
@@ -66,12 +72,19 @@ Crime instensities across the city limits of Atlanta.
 Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
 + __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
 
+
+
 + __Comment__ about what DBSCAN reduced set told us about our data and what the reduced set aimed to do.
 
 + Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted.
 
+![Mean Shift](link)
+
+
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
+
+
 
 #### Metrics & Plots
 1. Decision Tree
@@ -79,6 +92,10 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 3. Naive-Bayes Classifier
 4. Support Vector Machine
 5. Logistic Regression
+
+![Metric1](link)
+![Metric2](link)
+
 
 
 
