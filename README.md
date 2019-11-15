@@ -44,16 +44,16 @@ It is important to cluster based on location and time, as they are relevant feat
 ## Visualization
 Crime instensities across the city limits of Atlanta. 
 
-![Atlanta all categories visualization](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities.png)
+![Atlanta all categories visualization](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities.png)
 
 
-![Category 1](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_1.png)
+![Category 1](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_1.png)
 
-![Category 2](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
+![Category 2](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
 
-![Category 3](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_3.png)
+![Category 3](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_3.png)
 
-![Category 4](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_4.png)
+![Category 4](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_4.png)
 
 
 
