@@ -30,12 +30,13 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  ...        | ...         |    ...              | ...      | ...        |  ...  
 
 ### Unsupervised algorithms
-Year  | Month|  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
- -----|:----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
- 2009 | 1    |   1   | 3            | 0          |  15        |    58      |  48
- 2009 | 1    |   2   | 4            | 0          |  15        |    46      |  73
- 2009 | 1    |   3   | 5            | 1          |  21        |    37      |  56
- ...  | ...  | ...   | ...          | ...        |  ...       |    ...     |  ...       
+
+Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
+ -----|:-----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
+ 2009 | 1     |   1   | 3            | 0          |  15        |    58      |  48
+ 2009 | 1     |   2   | 4            | 0          |  15        |    46      |  73
+ 2009 | 1     |   3   | 5            | 1          |  21        |    37      |  56
+ ...  | ...   | ...   | ...          | ...        |  ...       |    ...     |  ...       
 
 ## Approach
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. As for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime would serve beneficial to the analysis. Assuming the decision tree works well, then a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we expect to use primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy. Given access to a computer provided by the class, we will be able to efficiently run our model using parallelization in Python and/or PySpark.
