@@ -1,12 +1,10 @@
 # Atlanta Crime Mapping for CS7641 - Group 17
-#### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada3
+#### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
-![Atlanta Pic](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
+![Atlanta Skyline](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
 
 ## Motivation
-In Atlanta, crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita,
-Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal
-with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively. All of this can be
+In Atlanta, the overall crime rate is 108% higher than the national average. Crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita, Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively. Crime-heavy areas can be
 achieved using a good enough predictive model. We reviewed literature of machine learning crime prediction methods
 using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying
 these methods to Atlanta crime data and improving predictive model efficiency.
@@ -73,7 +71,7 @@ evaluate our model then continue hyper-tuning parameters.
 
 
 ## References 
-[1] Schiller, Andrew. "Atlanta, GA Crime Rates." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
+[1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
 Sept. 2019. </br>
 
 [2] Mcclendon, Lawrence, and Natarajan Meghanathan. "Using Machine Learning Algorithms to Analyze Crime
