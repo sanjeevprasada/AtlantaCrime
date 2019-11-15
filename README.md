@@ -30,19 +30,32 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  ...        | ...         |    ...              | ...      | ...        |  ...  
 
 ### Unsupervised algorithms
-Year  | Month|  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
- -----|:----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
- 2009 | 1    |   1   | 3            | 0          |  15        |    58      |  48
- 2009 | 1    |   2   | 4            | 0          |  15        |    46      |  73
- 2009 | 1    |   3   | 5            | 1          |  21        |    37      |  56
- ...  | ...  | ...   | ...          | ...        |  ...       |    ...     |  ...       
+
+Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
+ -----|:-----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
+ 2009 | 1     |   1   | 3            | 0          |  15        |    58      |  48
+ 2009 | 1     |   2   | 4            | 0          |  15        |    46      |  73
+ 2009 | 1     |   3   | 5            | 1          |  21        |    37      |  56
+ ...  | ...   | ...   | ...          | ...        |  ...       |    ...     |  ...       
 
 ## Approach
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. As for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime would serve beneficial to the analysis. Assuming the decision tree works well, then a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we expect to use primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy. Given access to a computer provided by the class, we will be able to efficiently run our model using parallelization in Python and/or PySpark.
 
 ## Visualization
 Crime instensities across the city limits of Atlanta. 
-![Atlanta all categories visualization](https://github.com/sanjeevprasada/AtlantaCrime/blob/master/sample.png)
+
+![Atlanta all categories visualization](https://imgur.com/kk4YhHq)
+
+
+![Category 1](https://sanjeevprasada.github.com/AtlantaCrime/master/images/visualization/Crime_intensities_category_1.png)
+
+![Category 2](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
+
+![Category 3](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_3.png)
+
+![Category 4](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_4.png)
+
+
 
 + shapefile was imported in Python to read the shapefile data
 + pandas was to read the csv data
@@ -54,12 +67,19 @@ Crime instensities across the city limits of Atlanta.
 Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
 + __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
 
+
+
 + __Comment__ about what DBSCAN reduced set told us about our data and what the reduced set aimed to do.
 
 + Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted.
 
+![Mean Shift](link)
+
+
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
+
+
 
 #### Metrics & Plots
 1. Decision Tree
@@ -67,6 +87,10 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 3. Naive-Bayes Classifier
 4. Support Vector Machine
 5. Logistic Regression
+
+![Metric1](link)
+![Metric2](link)
+
 
 
 
