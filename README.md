@@ -47,7 +47,7 @@ Crime instensities across the city limits of Atlanta.
 ![Atlanta all categories visualization](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities.png)
 
 
-![Category 1](https://raw.githubusercontent.com/sanjeevprasada/AtlantaCrime/master/images/visualization/Crime_intensities_category_1.png)
+![Category 1](https://sanjeevprasada.github.com/AtlantaCrime/master/images/visualization/Crime_intensities_category_1.png)
 
 ![Category 2](https://raw.github.com/sanjeevprasada/AtlantaCrime/blob/master/images/visualization/Crime_intensities_category_2.png)
 
