@@ -199,3 +199,5 @@ Contributions from each team member:
 3. Sanjeev Prasada: Preprocessing and GitHub pages
 4. Aayush Dubey: Supervised learning and hypertuning parameters for model
 5. Kevin Tynes: Unsupervised learning and preprocessing
+
+Although members led different portions of our project, we all believe that our individuals contributions were equivalent.
