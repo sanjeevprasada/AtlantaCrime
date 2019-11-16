@@ -63,21 +63,13 @@ We generated a crime score for each neighborhood for each day. This is our "secr
 
 
 
-+ Category 1: homicides, manslaughter     (1000x)
 
-![Category 1](images/visualization/Crime_intensities_all.png?raw=true)
+![Category 1 and 2](images/visualization/Crime_intensities_first.png?raw=true)
 
-+ Category 2: aggravated assault, robbery  (100x)
 
-![Category 2](images/visualization/Crime_intensities_category_2.png?raw=true)
+![Category 3 and 4](images/visualization/Crime_intensities_last.png?raw=true)
 
-+ Category 3: burgulary, auto-theft         (10x)
 
-![Category 3](images/visualization/Crime_intensities_category_3.png?raw=true)
-
-+ Category 4: larceny                        (1x)
-
-![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
 
 
 We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
