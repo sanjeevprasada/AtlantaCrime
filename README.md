@@ -54,6 +54,13 @@ It is important to cluster based on location and time, as they are relevant feat
 #### What is new in our approach?
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
 
+ Category |     Crimes in Category     |   Weightage
+ :--------|:--------------------------:|-------------:
+ 1        | homicides, manslaughter    | 1000x
+ 2        | aggravated assault, robbery| 100x
+ 3        | burgulary, auto-theft      | 10x
+ 4        | larceny                    | 1x
+ Category 1 |
 + Category 1: homicides, manslaughter     (1000x)
 
 ![Category 1](images/visualization/Crime_intensities_category_1.png?raw=true)
