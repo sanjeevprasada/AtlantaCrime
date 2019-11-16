@@ -102,10 +102,7 @@ Here we computed PCA with all numerically independent features:
 + Cleaned crime data for 2019
 Numerical features were scaled to unit variance of centered data before performing PCA.
 
-![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png)
-
-
-![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
+![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
 
 
 A relatively even distribution of explained variance ratios across principal components indicates we need to include all, if not more, features within our predictive model.
