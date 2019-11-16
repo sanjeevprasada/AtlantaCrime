@@ -2,14 +2,20 @@
 #### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
 ![Atlanta Skyline](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
-
+# Introduction
 ## Motivation
 In Atlanta, the overall crime rate is 108% higher than the national average. Crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita, Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively. Sufficient patrols in crime-heavy areas can be
 achieved using a prediction model to estimate the areas with the most severe crimes. We reviewed literature of machine learning crime prediction methods using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying these methods to Atlanta crime data and improving predictive model efficiency.
 
+#### What have people already done?
+References are important. We may need to reference our proposal here and summarize our literature review. Will work on this tonight after dinner (post 9pm).
+
+#### What are you trying to do to tackle with your project motivation or problem?
+Help police offers re-allocate and distribute their patrols to areas of higher need. (Figure out sexier way to say help the cops patrol, mention our Machine Learning algorithms for clout).
+
 
 ## Dataset (Needs description of features, accessability, etc.)
-After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft.
+After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables).
 
 ### Original Dataset
 
@@ -61,7 +67,7 @@ Crime instensities across the city limits of Atlanta.
 + pandas was to read the csv data
 + seaborn was used for coloring
 + matplotlib was to display the data (both pandas and shapefile)
-+ 
++ need one paragraph explaining the legend and the conclusions we could make from the visualizations.
 
 ## Unsupervised Methods
 Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
@@ -81,17 +87,18 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 
 
 
-#### Metrics & Plots
+#### Metrics & Results
 1. Decision Tree
 2. Random Forest
 3. Naive-Bayes Classifier
 4. Support Vector Machine
 5. Logistic Regression
 
-![Metric1](link)
-![Metric2](link)
-
-
+![Metric 1](link)
+![Metric 2](link)
+![Metric 3](link)
+![Metric 4](link)
+![Metric 5](link)
 
 
 ## Discussion 
@@ -102,6 +109,9 @@ CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime incite
 construction sites can be monitored more frequently. We will be using metrics such as F1 score, accuracy, and/or loss to
 evaluate our model then continue hyper-tuning parameters.
 
+## Conclusion
+#### Major Achievement
+#### Future work
 
 ## References 
 [1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
