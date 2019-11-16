@@ -78,13 +78,16 @@ These visualizations of Atlanta are from the dataset 2009-2018 and are visualizi
 ![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
 
 
-
 + shapefile was imported in Python to read the shapefile data
 + pandas was to read the csv data
 + seaborn was used for coloring
 + matplotlib was to display the data (both pandas and shapefile)
 + need one paragraph explaining the legend and the conclusions we could make from the visualizations.
 
+
+![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
+
+![Crime Score 2019 Prediction](images/visualization/crime_scores_2019prediction.png)
 ## Unsupervised Methods
 Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
 + __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
