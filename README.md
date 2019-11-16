@@ -99,8 +99,9 @@ As mentioned in our approach, we used crime categories to preprocess our data in
 Here we computed PCA with all numerically independent features:  
 `['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
 + Cleaned crime data for 2009-2018
-+ Cleaned crime data for 2019
++ Cleaned crime data for 2019  
 Numerical features were scaled to unit variance of centered data before performing PCA.
+`X = sk.preprocessing.StandardScaler().fit_transform(data)`
 
 ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
 
