@@ -18,7 +18,7 @@ Help police offers re-allocate and distribute their patrols to areas of higher n
 
 
 ## Dataset (Needs description of features, accessability, etc.)
-After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
+Our dataset comes from the Atlanta PD Crime Statistics dataset publicly available on [website](https://www.atlantapd.org/i-want-to/crime-data-downloads). This data is available as two separate datasets 'COBRA-2009-2018' and 'COBRA-2019'. After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
 
 
 ### Original Dataset
@@ -30,7 +30,7 @@ After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular cr
  090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
  ...           |    ...     | ...        | ...          | ...                 | ...      | ...
 
-### Supervised algorithms preprocessed dataset
+### Unsupervised algorithms preprocessed dataset
 
 Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift Occurrence 
  -----------|:-----------:|:-------------------:|:--------:|:----------:|:----------------:
@@ -39,7 +39,7 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
  ...        | ...         |    ...              | ...      | ...        |  ...  
 
-### Unsupervised algorithms
+### Supervised algorithms
 
 Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
  -----|:-----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
@@ -54,16 +54,16 @@ It is important to cluster based on location and time, as they are relevant feat
 #### What is new in our approach?
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
 
-+ Category 1: homicides, manslaughter (1000x)
-+ Category 2: aggravated assault, robbery (100x)
-+ Category 3: burgulary, auto-theft (10x)
-+ Category 4: larceny (1x)
++ Category 1: homicides, manslaughter     (1000x)
++ Category 2: aggravated assault, robbery  (100x)
++ Category 3: burgulary, auto-theft         (10x)
++ Category 4: larceny                        (1x)
 
 
 ## Visualization
-Crime instensities across the city limits of Atlanta.
+Crime intensities across the city limits of Atlanta.
 
-These visualizations of Atlanta are from 2009-2018 and are visualizing the counts of total crimes occuring.
+These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
 
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
