@@ -96,7 +96,7 @@ Initially we wanted to explore the features of our data to determine which may b
 
 As mentioned in our approach, we used crime categories to preprocess our data into bins of crime type. 
 
-Here we computed PCA with all numerically independent features:
+Here we computed PCA with all numerically independent features:  
 `['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
 + Cleaned crime data for 2009-2018
 + Cleaned crime data for 2019
@@ -116,7 +116,7 @@ Additionally we wanted to look at clustering algorithms such as DBSCAN, K-Means 
 Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.
 We utilized K-Distance Plots with the Elbow Method to determine optimal epsilon given min_samples for DBSCAN.
 
-DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution.
+DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution.  
 ![Mean Shift](link)
 
 ### Multiple-Feature Clustering 
