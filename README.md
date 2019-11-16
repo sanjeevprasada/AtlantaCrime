@@ -39,7 +39,7 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
  ...        | ...         |    ...              | ...      | ...        |  ...  
 
-### Supervised algorithms
+### Supervised algorithms dataset
 
 Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
  -----|:-----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
