@@ -54,8 +54,16 @@ It is important to cluster based on location and time, as they are relevant feat
 #### What is new in our approach?
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes.
 
++ Category 1: homicides
++ Category 2: 
++ Category 3:
++ Category 4:
+
 ## Visualization
-Crime instensities across the city limits of Atlanta. 
+Crime instensities across the city limits of Atlanta.
+
+These visualizations of Atlanta are from 2009-2018 and are visualizing the counts of crimes occuring.
+
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
 
@@ -90,9 +98,10 @@ Our tech stack for the unsupervised methods were sklearn in Python. First, we pl
 
 We conducted PCA on the cobra-clean2009.csv and cobra-clean2019.csv dataset and received similar results. This shows that an almost identical amount of variance can be explained from the same components across different years. This shows the explained variance ratio is non-random and we have a justified reason to be using those Components.
 
-![PCA explained ratio 2009](link)
+![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png)
 
-![PCA explained ratio 2019](link)
+
+![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
 
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
