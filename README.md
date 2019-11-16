@@ -59,7 +59,7 @@ We generated a crime score for each neighborhood for each day. This is our "secr
 + Category 3: burgulary, auto-theft         (10x)
 + Category 4: larceny                        (1x)
 
-
+We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
@@ -109,6 +109,7 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 
 
 
+
 #### Metrics & Results
 1. Decision Tree
 2. Random Forest
@@ -116,15 +117,15 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 4. Support Vector Machine
 5. Logistic Regression
 
-![Metric 1](link)
+![Metric 1](images/Supervised_Algs/apr_categories.png)
 
-![Metric 2](link)
+![Metric 2](images/Supervised_Algs/ar.png)
 
-![Metric 3](link)
+![Metric 3](images/Supervised_Algs/rmse.png)
 
-![Metric 4](link)
+![Metric 4](images/Supervised_Algs/times.png)
 
-![Metric 5](link)
+![Metric 5](images/Supervised_Algs/log_times.png)
 
 
 
@@ -159,3 +160,12 @@ ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print. </br>
 [5] Bappee, Fateha Khanam, Amílcar Soares Júnior, and Stan Matwin. "Predicting Crime Using Spatial Features."
 Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.
 
+
+
+
+Contributions from each team member:
+1. Gabriel Leventhal-Douglas: 100
+2. Abdurrahmane Rikli: 100
+3. Sanjeev Prasada: 100
+4. Aayush Dubey: 100
+5. Kevin Tynes: 100
