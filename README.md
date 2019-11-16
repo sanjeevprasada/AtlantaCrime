@@ -2,10 +2,16 @@
 #### Abdurrahmane Rikli, Gabriel Leventhal-Douglas, Kevin Tynes, Aayush Dubey, and Sanjeev Prasada
 
 ![Atlanta Skyline](http://media.bizj.us/view/img/6139341/atlanta-skyline*750xx3684-2070-0-28.jpg)
-
+# Introduction
 ## Motivation
 In Atlanta, the overall crime rate is 108% higher than the national average. Crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita, Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively. Sufficient patrols in crime-heavy areas can be
 achieved using a prediction model to estimate the areas with the most severe crimes. We reviewed literature of machine learning crime prediction methods using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying these methods to Atlanta crime data and improving predictive model efficiency.
+
+####What have people already done?
+References are important.
+
+####What are you trying to do to tackle with your project motivation or problem?
+Help police offers re-allocate and distribute their patrols to areas of higher need.
 
 
 ## Dataset (Needs description of features, accessability, etc.)
@@ -81,15 +87,15 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 
 
 
-#### Metrics & Plots
+#### Metrics & Results
 1. Decision Tree
 2. Random Forest
 3. Naive-Bayes Classifier
 4. Support Vector Machine
 5. Logistic Regression
 
-![Metric1](link)
-![Metric2](link)
+![Metric 1](link)
+![Metric 2](link)
 
 
 
@@ -102,6 +108,9 @@ CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime incite
 construction sites can be monitored more frequently. We will be using metrics such as F1 score, accuracy, and/or loss to
 evaluate our model then continue hyper-tuning parameters.
 
+##Conclusion
+####Major Achievement
+####Future work
 
 ## References 
 [1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
