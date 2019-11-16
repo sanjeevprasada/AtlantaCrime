@@ -83,12 +83,10 @@ Here, we mention each category we created and what crimes fall into that categor
 ## Visualization of Crime Scores
 We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 
-How we created the visualizations:
-+ shapefile was imported in Python to read the shapefile data
-+ pandas was to read the csv data
-+ seaborn was used for coloring
-+ matplotlib was to display the data (both pandas and shapefile)
-+ need one paragraph explaining the legend and the conclusions we could make from the visualizations.
+### How we created the visualizations:
+Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include the information for the shapes and coordinates for the different neighborhoods of Atlanta. The data for crime scores, categories, and neighborhoods was generated using the publicly available crime reports from the Atlanta Police Department website, and imported as a CSV.
+
+Each neighborhood in Atlanta was colored based on the intensity of the crime count/score, using the seaborn package. For data that was missing from either the ARC Shapefiles or the crime reports, the neighborhoods were intentionally left white. For example, "Airport" is technically a neighborhood on its own in Atlanta, but there were no reported crimes for it in the dataset. In all other cases, the darker colors indicate a higher intensity in crime count/score.
 
 #### Actual 2019 visualization (Ground Truth)
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
