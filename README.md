@@ -52,17 +52,18 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. To finishAs for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime served beneficial to the analysis. The decision tree works well, so naturally a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
 
 #### What is new in our approach?
-We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes.
+We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
 
-+ Category 1: homicides
-+ Category 2: 
-+ Category 3:
-+ Category 4:
++ Category 1: homicides, manslaughter (1000x)
++ Category 2: aggravated assault, robbery (100x)
++ Category 3: burgulary, auto-theft (10x)
++ Category 4: larceny (1x)
+
 
 ## Visualization
 Crime instensities across the city limits of Atlanta.
 
-These visualizations of Atlanta are from 2009-2018 and are visualizing the counts of crimes occuring.
+These visualizations of Atlanta are from 2009-2018 and are visualizing the counts of total crimes occuring.
 
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
@@ -116,10 +117,15 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 5. Logistic Regression
 
 ![Metric 1](link)
+
 ![Metric 2](link)
+
 ![Metric 3](link)
+
 ![Metric 4](link)
+
 ![Metric 5](link)
+
 
 
 ## Discussion 
