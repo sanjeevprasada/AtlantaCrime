@@ -136,7 +136,7 @@ We evaluated our approach using accuracy, precision, and recall for classificati
 ## Conclusion
 
 #### Major Achievement
-Our major achievement was our supervised model using crime score. Classification methods and metrics that are above the lower bound that we set for. 
+Our major achievement was our supervised model using crime score. Naive Bayes Classifier was our metric of choice. NBC was the 2nd quickest to run, it was also the 2nd best accuracy as well. Logistic Regression classification gave us our best accuracy of 0.637. The predicted values would be 1, 2, 3, or 4 based on the day and neighborhood. Classification methods and metrics that are above the lower bound that we set for. 
 #### Future work
 Without question, our methodology could be improved. Given more time and resources, we would plan to merge our dataset with other datasets regarding Atlanta location specifics. Giving neighborhoods more features and more variability would only help our model learn and raise our accuracy. Another thing we would may be consider would be implementing similar prediction using deep learning neural networks.
 
