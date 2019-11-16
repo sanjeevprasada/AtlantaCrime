@@ -51,7 +51,10 @@ It is important to cluster based on location and time, as they are relevant feat
 
 #### Visualization of our crime-count original dataset. 
 
+These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
+
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
+
 This is our visualization of our raw data. 
 
 #### What is new in our approach?
@@ -76,12 +79,9 @@ Here, we mention each category we created and what crimes fall into that categor
 ![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
 
 
+
+## Visualization of Crime Scores
 We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
-## Visualization
-Crime intensities across the city limits of Atlanta.
-
-These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
-
 
 How we created the visualizations:
 + shapefile was imported in Python to read the shapefile data
@@ -90,7 +90,7 @@ How we created the visualizations:
 + matplotlib was to display the data (both pandas and shapefile)
 + need one paragraph explaining the legend and the conclusions we could make from the visualizations.
 
-#### 2019 Prediction with Machine Learning
+#### Actual 2019 visualization (Ground Truth)
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
 This first image is a visualization of our ground truth data from the 2019 dataset.
 
