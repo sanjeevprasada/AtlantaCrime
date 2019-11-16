@@ -15,7 +15,8 @@ Help police offers re-allocate and distribute their patrols to areas of higher n
 
 
 ## Dataset (Needs description of features, accessability, etc.)
-After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables).
+After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
+
 
 ### Original Dataset
 
@@ -45,7 +46,10 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
  ...  | ...   | ...   | ...          | ...        |  ...       |    ...     |  ...       
 
 ## Approach
-It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. As for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime would serve beneficial to the analysis. Assuming the decision tree works well, then a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we expect to use primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy. Given access to a computer provided by the class, we will be able to efficiently run our model using parallelization in Python and/or PySpark.
+It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. To finishAs for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime served beneficial to the analysis. The decision tree works well, so naturally a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
+
+#### What is new in our approach?
+We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes.
 
 ## Visualization
 Crime instensities across the city limits of Atlanta. 
@@ -81,6 +85,11 @@ Our tech stack for the unsupervised methods were sklearn in Python. First, we pl
 
 ![Mean Shift](link)
 
+We conducted PCA on the cobra-clean2009.csv and cobra-clean2019.csv dataset and received similar results. This shows that an almost identical amount of variance can be explained from the same components across different years. This shows the explained variance ratio is non-random and we have a justified reason to be using those Components.
+
+![PCA explained ratio 2009](link)
+
+![PCA explained ratio 2019](link)
 
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
@@ -102,16 +111,18 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 
 
 ## Discussion 
-True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists.
-Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification
-of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as
-CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and
-construction sites can be monitored more frequently. We will be using metrics such as F1 score, accuracy, and/or loss to
-evaluate our model then continue hyper-tuning parameters.
+True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
+
+We evaluated our approach using accuracy, precision, and recall for classification of categories. In regression of crime scores, our metric is RMSE.
 
 ## Conclusion
+
 #### Major Achievement
+Our major achievement was our supervised model using crime score. Classification methods and metrics that are above the lower bound that we set for. 
 #### Future work
+Without question, our methodology could be improved. Given more time and resources, we would plan to merge our dataset with other datasets regarding Atlanta location specifics. Giving neighborhoods more features and more variability would only help our model learn and raise our accuracy. Another thing we would may be consider would be implementing similar prediction using deep learning neural networks.
+
+Although we had access to 300,000+ rows of data, access to more data would make our model more robust.
 
 ## References 
 [1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
