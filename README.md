@@ -49,18 +49,8 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
 ## Approach
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. To finishAs for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime served beneficial to the analysis. The decision tree works well, so naturally a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
 
-#### Visualization of our crime-count original dataset. 
-
-These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
-
-![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
-
-This is our visualization of our raw data. 
-
 #### What is new in our approach?
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
-
-Here, we mention each category we created and what crimes fall into that category. Also, we are visualizing each category of crimes by itself in these plots.
 
 + Category 1: homicides, manslaughter     (1000x)
 
@@ -79,9 +69,13 @@ Here, we mention each category we created and what crimes fall into that categor
 ![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
 
 
-
-## Visualization of Crime Scores
 We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
+## Visualization
+Crime intensities across the city limits of Atlanta.
+
+These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
+
+![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
 
 How we created the visualizations:
 + shapefile was imported in Python to read the shapefile data
@@ -90,7 +84,7 @@ How we created the visualizations:
 + matplotlib was to display the data (both pandas and shapefile)
 + need one paragraph explaining the legend and the conclusions we could make from the visualizations.
 
-#### Actual 2019 visualization (Ground Truth)
+#### 2019 Prediction with Machine Learning
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
 This first image is a visualization of our ground truth data from the 2019 dataset.
 
@@ -98,23 +92,39 @@ This first image is a visualization of our ground truth data from the 2019 datas
 Here is our machine learning model's predicted 2019 data.
 
 ## Unsupervised Methods
-Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
-+ __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
+Our tech stack for the unsupervised methods were sklearn in Python. 
 
+#### PCA
+Initially we wanted to explore the features of our data to determine which may be most relevant. 
 
+As mentioned in our approach, we used crime categories to preprocess our data into bins of crime type. 
 
-+ __Comment__ about what DBSCAN reduced set told us about our data and what the reduced set aimed to do.
-
-+ Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted.
-
-![Mean Shift](link)
-
-We conducted PCA on the cobra-clean2009.csv and cobra-clean2019.csv dataset and received similar results. This shows that an almost identical amount of variance can be explained from the same components across different years. This shows the explained variance ratio is non-random and we have a justified reason to be using those Components.
+Here we computed PCA with all numerically independent features `['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
++ Cleaned crime data for 2009-2018
++ Cleaned crime data for 2019
+Numerical features were scaled to unit variance of centered data before performing PCA.
 
 ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png)
 
 
 ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
+
+
+A relatively even distribution of explained variance ratios across principal components indicates we need to include all, if not more, features within our predictive model.
+
+### Location-based Clustering 
+Additionally we wanted to look at clustering algorithms such as DBSCAN, K-Means and Mean Shift to determine potential associations between features. 
+
+Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.
+We utilized K-Distance Plots with the Elbow Method to determine optimal epsilon given min_samples for DBSCAN.
+
+DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution.
+![Mean Shift](link)
+
+### Multiple-Feature Clustering 
+
+To include more features within our unsupervised approach we decided to compute KMeans for our preprocessed supervised datasets. 
+After computing an optimal K value from an elbow plot of squared distances, we created new features composed of the Euclidean Distance of each point to all centroids.
 
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
