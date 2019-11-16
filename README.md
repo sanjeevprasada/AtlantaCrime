@@ -126,20 +126,28 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 1. Decision Tree
 2. Random Forest
 3. Naive-Bayes Classifier
-4. Support Vector Machine
-5. Logistic Regression
+4. Logistic Regression
+5. Linear Regression
+
+According to the location and time, specifically the neighorhood, day of the week, the month, and time in which the crime occurred, we are able to predict the most likely category of the crime and regress on the crime scores.
+
+After our data was preprocessed, we built classification and regression methods using Decision Trees, Random Forest, Naive-Bayes, Linear Regression and Logistic Regression. We also performed Cross-Validation on all of the models and their respective time, accuracy/precision/recall metrics, and RMSE plots are displayed below. 
+
+We attempted to do Support Vector Machine but it took way too long and had low performance. Because it led to unsatisfactory results, we removed it from our results section and chose to move forward.
+
+When it comes to time, Naive-Bayes and Linear Regression are the two quickest algorithms that we ran, whereas Logistic Regression was the slowest. 
+
+As for the accuracy metrics, Naive-Bayes Classifier and Logistic Regression were the only two methods that had a higher accuracy than the lower bound (0.55). The lower bound is calculated by classifying all data points as the most popular category, which was Category 4. However, logistic regression mostly classified every entry correctly as Category 4 (the recall is 0.999).
+
+Lastly, the RMSE values showed that Random Forest had the lowest error, when regressing the crime scores. The highest RMSE value was from Logistic Regression. In conclusion, we prefer the Naive Bayes Classifier for determining the categories and Random Forest for calculating the crime scores.
 
 ![Metric 1](images/Supervised_Algs/apr_categories.png)
 
-![Metric 2](images/Supervised_Algs/ar.png)
+![Metric 2](images/Supervised_Algs/rmse.png)
 
-![Metric 3](images/Supervised_Algs/rmse.png)
+![Metric 3](images/Supervised_Algs/times.png)
 
-![Metric 4](images/Supervised_Algs/times.png)
-
-![Metric 5](images/Supervised_Algs/log_times.png)
-
-
+![Metric 4](images/Supervised_Algs/log_times.png)
 
 ## Discussion 
 True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
