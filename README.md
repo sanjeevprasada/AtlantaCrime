@@ -116,8 +116,15 @@ Additionally we wanted to look at clustering algorithms such as DBSCAN, K-Means 
 Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.
 We utilized K-Distance Plots with the Elbow Method to determine optimal epsilon given min_samples for DBSCAN.
 
-DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution.  
-![Mean Shift](link)
+DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution. 
+
+Mean shift results
+
+![Mean Shift](images/Unsupervised_Algs/meanshift.png)
+
+KMeans results
+![KMeans](images/Unsupervised_Algs/kmeans.png)
+
 
 ### Multiple-Feature Clustering 
 
