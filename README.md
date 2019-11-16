@@ -6,16 +6,14 @@
 ## Motivation
 In Atlanta, the overall crime rate is 108% higher than the national average. Crime is an ever-present concern. With almost 30 thousand crimes a year and a 61% crime rate per capita, Atlanta is one of the 3% most dangerous cities in the United States [1]. With such issues, the police force cannot deal with crime on a case-by-case basis. They need to be directed to crime-heavy areas preemptively.
 
+#### What are you trying to do to tackle with your project motivation or problem?
 Sufficient patrols in crime-heavy areas can be achieved using a prediction model to estimate the areas with the most severe crimes. More dangerous crimes can be preempted. With a real-time updating machine learning model, the police force can consistently catch up with crimes before they even occur day by day, and more often than not, their presence alone is enough to prevent crimes from occurring. Overall, as long as informative data is fed into the model, average crime rate is sure to consistently drop.
 
 We reviewed literature of machine learning crime prediction methods using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying these methods to Atlanta crime data and improving predictive model efficiency.
 
 #### What have people already done?
 References are important. We may need to reference our proposal here and summarize our literature review. Will work on this tonight after dinner (post 9pm).
-
-#### What are you trying to do to tackle with your project motivation or problem?
-Help police offers re-allocate and distribute their patrols to areas of higher need. (Figure out sexier way to say help the cops patrol, mention our Machine Learning algorithms for clout).
-
+Crime statistics -likelihood for the most part- were pridected per 100k people in the state of Mississipi, irrespective of any features aside from the state's crime type statistics in their paper[2]. For the most part, time and space relevant features were examined only within the context of splitting areas into grids, and predicting intensity and displacement[3], although there were some attempts at clustering crime occurrences [5]. Closest to our approach was an attempt at predicting crime occurrences through similar features using KNN and Boosted Decision Tree, although the accuracy was 44% at its highest[4].
 
 ## Dataset (Needs description of features, accessability, etc.)
 Our dataset comes from the Atlanta PD Crime Statistics dataset publicly available on [website](https://www.atlantapd.org/i-want-to/crime-data-downloads). This data is available as two separate datasets 'COBRA-2009-2018' and 'COBRA-2019'. After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
@@ -41,7 +39,7 @@ Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift 
  2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
  ...        | ...         |    ...              | ...      | ...        |  ...  
 
-### Supervised algorithms
+### Supervised algorithms dataset
 
 Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Category 4 
  -----|:-----:|:-----:|:------------:|:----------:|:----------:|:----------:|:----------:
@@ -57,57 +55,77 @@ It is important to cluster based on location and time, as they are relevant feat
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
 
 + Category 1: homicides, manslaughter     (1000x)
+
+![Category 1](images/visualization/Crime_intensities_category_1.png?raw=true)
+
 + Category 2: aggravated assault, robbery  (100x)
+
+![Category 2](images/visualization/Crime_intensities_category_2.png?raw=true)
+
 + Category 3: burgulary, auto-theft         (10x)
+
+![Category 3](images/visualization/Crime_intensities_category_3.png?raw=true)
+
 + Category 4: larceny                        (1x)
 
+![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
 
+
+We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
 These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
 
-
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
 
+### How we created the visualizations:
+Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include the information for the shapes and coordinates for the different neighborhoods of Atlanta. The data for crime scores, categories, and neighborhoods was generated using the publicly available crime reports from the Atlanta Police Department website, and imported as a CSV.
 
-![Category 1](images/visualization/Crime_intensities_category_1.png?raw=true)
+Each neighborhood in Atlanta was colored based on the intensity of the crime count/score, using the seaborn package. For data that was missing from either the ARC Shapefiles or the crime reports, the neighborhoods were intentionally left white. For example, "Airport" is technically a neighborhood on its own in Atlanta, but there were no reported crimes for it in the dataset. In all other cases, the darker colors indicate a higher intensity in crime count/score.
 
-![Category 2](images/visualization/Crime_intensities_category_2.png?raw=true)
+#### 2019 Prediction with Machine Learning
+![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
+This first image is a visualization of our ground truth data from the 2019 dataset.
 
-![Category 3](images/visualization/Crime_intensities_category_3.png?raw=true)
-
-![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
-
-
-
-+ shapefile was imported in Python to read the shapefile data
-+ pandas was to read the csv data
-+ seaborn was used for coloring
-+ matplotlib was to display the data (both pandas and shapefile)
-+ need one paragraph explaining the legend and the conclusions we could make from the visualizations.
+![Crime Score 2019 Prediction](images/visualization/crime_scores_2019prediction.png)
+Here is our machine learning model's predicted 2019 data.
 
 ## Unsupervised Methods
-Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
-+ __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
+
+### PCA
+Initially we wanted to explore the features of our data to determine which may be most relevant. 
+
+As mentioned in our approach, we used crime categories to preprocess our data into bins of crime type. 
+
+Here we computed PCA with all numerically independent features:  
+`['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
++ Cleaned crime data for 2009-2018
++ Cleaned crime data for 2019
+Numerical features were scaled to unit variance of centered data before performing PCA.
+
+![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
 
 
+A relatively even distribution of explained variance ratios across principal components indicates we need to include all, if not more, features within our predictive model.
 
-+ __Comment__ about what DBSCAN reduced set told us about our data and what the reduced set aimed to do.
+### Location-based Clustering 
+Additionally we wanted to look at clustering algorithms such as DBSCAN, K-Means and Mean Shift to determine potential associations between features. 
 
-+ Mean shift is our next algorithm of choice. Mean shift results can vary as the bandwidth (radius) parameter is adjusted.
+Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.
+We utilized K-Distance Plots with the Elbow Method to determine optimal epsilon given min_samples for DBSCAN.
 
+DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution.  
 ![Mean Shift](link)
 
-We conducted PCA on the cobra-clean2009.csv and cobra-clean2019.csv dataset and received similar results. This shows that an almost identical amount of variance can be explained from the same components across different years. This shows the explained variance ratio is non-random and we have a justified reason to be using those Components.
+### Multiple-Feature Clustering 
 
-![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png)
-
-
-![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
+To include more features within our unsupervised approach we decided to compute KMeans for our preprocessed supervised datasets. 
+After computing an optimal K value from an elbow plot of squared distances, we created new features composed of the Euclidean Distance of each point to all centroids.
 
 ## Supervised Methods
 Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
+
 
 
 
@@ -115,20 +133,28 @@ Our tech stack for the supervised methods were sklearn in Python. Some initial p
 1. Decision Tree
 2. Random Forest
 3. Naive-Bayes Classifier
-4. Support Vector Machine
-5. Logistic Regression
+4. Logistic Regression
+5. Linear Regression
 
-![Metric 1](link)
+According to the location and time, specifically the neighorhood, day of the week, the month, and time in which the crime occurred, we are able to predict the most likely category of the crime and regress on the crime scores.
 
-![Metric 2](link)
+After our data was preprocessed, we built classification and regression methods using Decision Trees, Random Forest, Naive-Bayes, Linear Regression and Logistic Regression. We also performed Cross-Validation on all of the models and their respective time, accuracy/precision/recall metrics, and RMSE plots are displayed below. 
 
-![Metric 3](link)
+We attempted to do Support Vector Machine but it took way too long and had low performance. Because it led to unsatisfactory results, we removed it from our results section and chose to move forward.
 
-![Metric 4](link)
+When it comes to time, Naive-Bayes and Linear Regression are the two quickest algorithms that we ran, whereas Logistic Regression was the slowest. 
 
-![Metric 5](link)
+As for the accuracy metrics, Naive-Bayes Classifier and Logistic Regression were the only two methods that had a higher accuracy than the lower bound (0.55). The lower bound is calculated by classifying all data points as the most popular category, which was Category 4. However, logistic regression mostly classified every entry correctly as Category 4 (the recall is 0.999).
 
+Lastly, the RMSE values showed that Random Forest had the lowest error, when regressing the crime scores. The highest RMSE value was from Logistic Regression. In conclusion, we prefer the Naive Bayes Classifier for determining the categories and Random Forest for calculating the crime scores.
 
+![Metric 1](images/Supervised_Algs/apr_categories.png)
+
+![Metric 2](images/Supervised_Algs/rmse.png)
+
+![Metric 3](images/Supervised_Algs/times.png)
+
+![Metric 4](images/Supervised_Algs/log_times.png)
 
 ## Discussion 
 True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
@@ -140,9 +166,11 @@ We evaluated our approach using accuracy, precision, and recall for classificati
 #### Major Achievement
 Our major achievement was our supervised model using crime score. Naive Bayes Classifier was our metric of choice. NBC was the 2nd quickest to run, it was also the 2nd best accuracy as well. Logistic Regression classification gave us our best accuracy of 0.637. The predicted values would be 1, 2, 3, or 4 based on the day and neighborhood. Classification methods and metrics that are above the lower bound that we set for. 
 #### Future work
-Without question, our methodology could be improved. Given more time and resources, we would plan to merge our dataset with other datasets regarding Atlanta location specifics. Giving neighborhoods more features and more variability would only help our model learn and raise our accuracy. Another thing we would may be consider would be implementing similar prediction using deep learning neural networks.
+Without question, our methodology could be improved. Given more time and resources, we would plan to merge our dataset with other datasets regarding Atlanta's location specifics. Giving neighborhoods more features and more variability would only help our model learn and raise our accuracy. Another thing we may consider would be implementing similar prediction using deep learning neural networks.
 
-Although we had access to 300,000+ rows of data, access to more data would make our model more robust.
+The approach of splitting areas into grids and calculating within those regions (while fine-tuning the grid-size) could be integrated into our approach, whether "globally" -within the whole city- or "locally" -within each neighborhood- for greater effect. Addition of Twitter datafeed into the Machine Learning model has been proven to increase accuracy for the grid-based approach, and would be interesting to see the effects of on the afore-mentioned hybrid.
+
+Although we had access to 300,000+ rows of data, access to more data/features would make our model more robust.
 
 ## References 
 [1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
@@ -161,3 +189,12 @@ ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print. </br>
 [5] Bappee, Fateha Khanam, Amílcar Soares Júnior, and Stan Matwin. "Predicting Crime Using Spatial Features."
 Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.
 
+
+
+
+Contributions from each team member:
+1. Gabriel Leventhal-Douglas: 100
+2. Abdurrahmane Rikli: 100
+3. Sanjeev Prasada: 100
+4. Aayush Dubey: 100
+5. Kevin Tynes: 100
