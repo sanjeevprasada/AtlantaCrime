@@ -62,12 +62,7 @@ We generated a crime score for each neighborhood for each day. This is our "secr
  4        | larceny                    | 1x
 
 
-
-
-![Category 1 and 2](images/visualization/Crime_intensities_first.png?raw=true)
-
-
-![Category 3 and 4](images/visualization/Crime_intensities_last.png?raw=true)
+![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
 
 
@@ -85,10 +80,11 @@ Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include
 
 Each neighborhood in Atlanta was colored based on the intensity of the crime count/score, using the seaborn package. For data that was missing from either the ARC Shapefiles or the crime reports, the neighborhoods were intentionally left white. For example, "Airport" is technically a neighborhood on its own in Atlanta, but there were no reported crimes for it in the dataset. In all other cases, the darker colors indicate a higher intensity in crime count/score.
 
-#### 2019 Prediction with Machine Learning
+#### 2019 Actual Data (Ground Truth)
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
 This first image is a visualization of our ground truth data from the 2019 dataset.
 
+#### 2019 Predicted Data using 
 ![Crime Score 2019 Prediction](images/visualization/crime_scores_2019prediction.png)
 Here is our machine learning model's predicted 2019 data.
 
