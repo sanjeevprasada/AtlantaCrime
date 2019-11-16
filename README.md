@@ -53,9 +53,21 @@ It is important to cluster based on location and time, as they are relevant feat
 We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
 
 + Category 1: homicides, manslaughter     (1000x)
+
+![Category 1](images/visualization/Crime_intensities_category_1.png?raw=true)
+
 + Category 2: aggravated assault, robbery  (100x)
+
+![Category 2](images/visualization/Crime_intensities_category_2.png?raw=true)
+
 + Category 3: burgulary, auto-theft         (10x)
+
+![Category 3](images/visualization/Crime_intensities_category_3.png?raw=true)
+
 + Category 4: larceny                        (1x)
+
+![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
+
 
 We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 ## Visualization
@@ -63,29 +75,22 @@ Crime intensities across the city limits of Atlanta.
 
 These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
 
-
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
 
-
-![Category 1](images/visualization/Crime_intensities_category_1.png?raw=true)
-
-![Category 2](images/visualization/Crime_intensities_category_2.png?raw=true)
-
-![Category 3](images/visualization/Crime_intensities_category_3.png?raw=true)
-
-![Category 4](images/visualization/Crime_intensities_category_4.png?raw=true)
-
-
+How we created the visualizations:
 + shapefile was imported in Python to read the shapefile data
 + pandas was to read the csv data
 + seaborn was used for coloring
 + matplotlib was to display the data (both pandas and shapefile)
 + need one paragraph explaining the legend and the conclusions we could make from the visualizations.
 
-
+#### 2019 Prediction with Machine Learning
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
+This first image is a visualization of our ground truth data from the 2019 dataset.
 
 ![Crime Score 2019 Prediction](images/visualization/crime_scores_2019prediction.png)
+Here is our machine learning model's predicted 2019 data.
+
 ## Unsupervised Methods
 Our tech stack for the unsupervised methods were sklearn in Python. First, we plotted the DBSCAN function and a corresponding elbow plot to __________ and optimize the ___________ and we conducted this method on k=3 to k=100. 
 + __Comment__ about what we learned through DBSCAN and drove the decision to also create __**DBSCAN Method 2** spatial representation__. 
