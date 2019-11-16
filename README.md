@@ -90,14 +90,14 @@ This first image is a visualization of our ground truth data from the 2019 datas
 Here is our machine learning model's predicted 2019 data.
 
 ## Unsupervised Methods
-Our tech stack for the unsupervised methods were sklearn in Python. 
 
-#### PCA
+### PCA
 Initially we wanted to explore the features of our data to determine which may be most relevant. 
 
 As mentioned in our approach, we used crime categories to preprocess our data into bins of crime type. 
 
-Here we computed PCA with all numerically independent features `['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
+Here we computed PCA with all numerically independent features:
+`['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
 + Cleaned crime data for 2009-2018
 + Cleaned crime data for 2019
 Numerical features were scaled to unit variance of centered data before performing PCA.
