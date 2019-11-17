@@ -65,6 +65,8 @@ We grouped types of crime into four crime categories based on our research and o
 
  _Crime Score Calculation_:
 
+ <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 $$/text{Crime Score} = 1000*/text{Category 1 Counts} + 100*/text{Category 2 Counts} + 10*/text{Category 3 Counts} + 1*/text{Category 4 Counts} $$
 
 In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
