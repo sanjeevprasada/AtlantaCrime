@@ -103,17 +103,19 @@ In our record-based datasets, we employed classification methods to predict crim
  196      | Horseshoe Community  | 129          | 10
 
 
-![Categories](images/visualization/Crime_intensities_all.png?raw=true)
-
 
 
 
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
-These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
+These figures of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
+
+These figures of Atlanta are visualizing the counts of total crime in each crime category.
+
+![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
 ### How we created the visualizations:
 Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include the information for the shapes and coordinates for the different neighborhoods of Atlanta. The data for crime scores, categories, and neighborhoods was generated using the publicly available crime reports from the Atlanta Police Department website, and imported as a CSV.
