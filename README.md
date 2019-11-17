@@ -81,9 +81,25 @@ In our record-based datasets, we employed classification methods to predict crim
   <img src="images/Unsupervised_Algs/crimescore_histogram.png" height = "75%" width="75%" />
 </p>
 
-![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
-![Crime Score Histogram2](images/Unsupervised_Algs/crimescore_histogram.png)
+ __Top 5 Crime Scores:__
 
+ Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
+ :--------|:--------------------:|-------------:|-------------:
+ 1        | Downtown             | 366925        | 24984
+ 2        | Midtown              | 188754        | 12283   
+ 3        | West End             | 186872        | 9031
+ 4        | Old Fourth Ward      | 182502        | 11441
+ 5        | Grove Park           | 155795        | 9488
+
+ __Bottom 5 Crime Scores:__
+
+ Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
+ :--------|:--------------------:|-------------:|-------------:
+ 200      | Edmund Park          | 24           | 10
+ 199      | Mays                 | 25           | 10      
+ 198      | Carroll Heights      | 31           | 0
+ 197      | Englewood Manor      | 110          | 0
+ 196      | Horseshoe Community  | 129          | 10
 
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
