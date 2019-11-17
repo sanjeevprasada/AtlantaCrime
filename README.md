@@ -76,8 +76,8 @@ In our record-based datasets, we employed classification methods to predict crim
   <img src="images/Unsupervised_Algs/percentcomp2019_histogram.png" height = "45%" width="45%" />
 </p>
 
-![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png){:height="50%" width="50%"}
-![Crime Score Histogram2](images/Unsupervised_Algs/crimescore2019_histogram.png){:height="50%" width="50%"}
+![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)<!-- .element height="50%" width="50%" -->
+![Crime Score Histogram2](images/Unsupervised_Algs/crimescore2019_histogram.png)<!-- .element height="50%" width="50%" -->
 
 
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
