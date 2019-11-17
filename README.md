@@ -77,8 +77,8 @@ In our record-based datasets, we employed classification methods to predict crim
 </p>
 
 <p float="left">
-  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height.= "40%" width="40%" />
-  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height = "40%" width="40%" />
+  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height.= "60%" width="60%" />
+  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height = "60%" width="60%" />
 </p>
 
 ![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
