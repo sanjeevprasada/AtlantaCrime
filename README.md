@@ -48,12 +48,17 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
  ...  | ...   | ...   | ...          | ...        |  ...       |    ...     |  ...       
 
 ## Approach
-It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. To finishAs for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime served beneficial to the analysis. The decision tree works well, so naturally a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
+
+For our unsupervised learning, we clustered based on both location and time to provide us more insights about the dataset that will be useful in understanding the data prior to building our predictive models with supervised learning algorithms. We also employed dimensionality reduction algorithms to explore the relationship between variables in our dataset's feature space. 
+
+For our supervised learning, we explored various algorithms to help predict crime severity across neighborhoods and time. In our record-based datasets, we employed classification methods to predict crime category of different crime occurrences. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighborhoods on different days. 
+
+Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
 
 #### What is new in our approach?
 We generated a crime score for each neighborhood and for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score which accounts for severity of different crimes. This feature was created to encapsulate the level of crime in a neighborhood and/or on a given day in a single value. We felt that using this crime score as our predictor feature brought us closer to our use case of helping civilians and the police force be able to determine crime across time and neighborhoods.
 
-We grouped types of crime into four crime categories based on our research and opinions on the severity of crimes. We then associated a weight to each category, and increased weight by order of 10 for more severe crimes.
+We grouped types of crime into four categories based on our research and opinions on the severity of crimes. We then associated a weight to each category, and increased weight by order of 10 for more severe crimes.
 
  Category |     Crimes in Category     |   Weight
  :--------|:--------------------------:|-------------:
@@ -68,8 +73,6 @@ Crime score is calculated as a weighted sum of crime category counts in a partic
 
  <img src="https://render.githubusercontent.com/render/math?math=\text{Crime Score} = (1000*\text{Category 1 Counts}) %2B (100*\text{Category 2 Counts}) %2B (10*\text{Category 3 Counts}) %2B (1*\text{Category 4 Counts})">
 
-In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
-
 
 <p float="left">
   <img src="/images/Unsupervised_Algs/percentcomp_histogram.png" height.= "45%" width="45%" />
@@ -78,14 +81,30 @@ In our record-based datasets, we employed classification methods to predict crim
 
 <p align="center">
   <img src="images/Unsupervised_Algs/crimescore_histogram.png" height.= "75%" width="75%" />
-  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height = "75%" width="75%" />
+  <img src="images/Unsupervised_Algs/crimescore2019_histogram.png" height = "75%" width="75%" />
 </p>
 
-![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
-![Crime Score Histogram2](images/Unsupervised_Algs/crimescore_histogram.png)
+ __Top 5 Crime Scores:__
+
+ Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
+ :--------|:--------------------:|-------------:|-------------:
+ 1        | Downtown             | 366925        | 24984
+ 2        | Midtown              | 188754        | 12283   
+ 3        | West End             | 186872        | 9031
+ 4        | Old Fourth Ward      | 182502        | 11441
+ 5        | Grove Park           | 155795        | 9488
 
 
-![Categories](images/visualization/Crime_intensities_all.png?raw=true)
+ __Bottom 5 Crime Scores:__
+
+ Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
+ :--------|:--------------------:|-------------:|-------------:
+ 200      | Edmund Park          | 24           | 10
+ 199      | Mays                 | 25           | 10      
+ 198      | Carroll Heights      | 31           | 0
+ 197      | Englewood Manor      | 110          | 0
+ 196      | Horseshoe Community  | 129          | 10
+
 
 
 
@@ -93,9 +112,13 @@ In our record-based datasets, we employed classification methods to predict crim
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
-These visualizations of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
+These figures of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
+
+These figures of Atlanta are visualizing the counts of total crime in each crime category.
+
+![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
 ### How we created the visualizations:
 Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include the information for the shapes and coordinates for the different neighborhoods of Atlanta. The data for crime scores, categories, and neighborhoods was generated using the publicly available crime reports from the Atlanta Police Department website, and imported as a CSV.
