@@ -12,7 +12,6 @@ Sufficient patrols in crime-heavy areas can be achieved using a prediction model
 We reviewed literature of machine learning crime prediction methods using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying these methods to Atlanta crime data and improving predictive model efficiency.
 
 #### What have people already done?
-References are important. We may need to reference our proposal here and summarize our literature review. Will work on this tonight after dinner (post 9pm).
 Crime statistics -likelihood for the most part- were pridected per 100k people in the state of Mississipi, irrespective of any features aside from the state's crime type statistics in their paper[2]. For the most part, time and space relevant features were examined only within the context of splitting areas into grids, and predicting intensity and displacement[3], although there were some attempts at clustering crime occurrences [5]. Closest to our approach was an attempt at predicting crime occurrences through similar features using KNN and Boosted Decision Tree, although the accuracy was 44% at its highest[4].
 
 ## Dataset (Needs description of features, accessability, etc.)
