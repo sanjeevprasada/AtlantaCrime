@@ -63,18 +63,25 @@ We grouped types of crime into four crime categories based on our research and o
  3        | burgulary, auto-theft      | 10x
  4        | larceny                    | 1x
 
+Crime score is calculated as a weighted sum of crime category counts in a particular location and time. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
+
  __Crime Score Calculation:__
 
  <img src="https://render.githubusercontent.com/render/math?math=\text{Crime Score} = (1000*\text{Category 1 Counts}) %2B (100*\text{Category 2 Counts}) %2B (10*\text{Category 3 Counts}) %2B (1*\text{Category 4 Counts})">
 
 In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
 
+![Percent Composition Histogram](images/Unsupervised_Algs/percentcomp_histogram.png)
+
+![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
+
+![Crime Score 2019 Ground Truth](images/Unsupervised_Algs/percentcomp_histogram.png)
+
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
 
 
 
-We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
