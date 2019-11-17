@@ -12,7 +12,6 @@ Sufficient patrols in crime-heavy areas can be achieved using a prediction model
 We reviewed literature of machine learning crime prediction methods using spatial [5, 3] and temporal [2] data in conjunction with crime-type. We will build upon this prior work by applying these methods to Atlanta crime data and improving predictive model efficiency.
 
 #### What have people already done?
-References are important. We may need to reference our proposal here and summarize our literature review. Will work on this tonight after dinner (post 9pm).
 Crime statistics -likelihood for the most part- were pridected per 100k people in the state of Mississipi, irrespective of any features aside from the state's crime type statistics in their paper[2]. For the most part, time and space relevant features were examined only within the context of splitting areas into grids, and predicting intensity and displacement[3], although there were some attempts at clustering crime occurrences [5]. Closest to our approach was an attempt at predicting crime occurrences through similar features using KNN and Boosted Decision Tree, although the accuracy was 44% at its highest[4].
 
 ## Dataset (Needs description of features, accessability, etc.)
@@ -63,18 +62,29 @@ We grouped types of crime into four crime categories based on our research and o
  3        | burgulary, auto-theft      | 10x
  4        | larceny                    | 1x
 
+Crime score is calculated as a weighted sum of crime category counts in a particular location and time. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
+
  __Crime Score Calculation:__
 
  <img src="https://render.githubusercontent.com/render/math?math=\text{Crime Score} = (1000*\text{Category 1 Counts}) %2B (100*\text{Category 2 Counts}) %2B (10*\text{Category 3 Counts}) %2B (1*\text{Category 4 Counts})">
 
 In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
 
+
+<p float="left">
+  <img src="/images/Unsupervised_Algs/percentcomp_histogram.png" height.= "45%" width="45%" />
+  <img src="images/Unsupervised_Algs/percentcomp2019_histogram.png" height = "45%" width="45%" />
+</p>
+
+![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png){:height="50%" width="50%"}
+![Crime Score Histogram2](images/Unsupervised_Algs/crimescore2019_histogram.png){:height="50%" width="50%"}
+
+
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
 
 
 
-We would combine the weighted sum of crimes in a particular location and time to get the crime score of that area. For example, in 2019, the worst crime score was in 'Downtown' with a neighborhood score of 23254.
 ## Visualization
 Crime intensities across the city limits of Atlanta.
 
