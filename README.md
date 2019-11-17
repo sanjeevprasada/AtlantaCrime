@@ -51,14 +51,14 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
 
 For our unsupervised learning, we clustered based on both location and time to provide us more insights about the dataset that will be useful in understanding the data prior to building our predictive models with supervised learning algorithms. We also employed dimensionality reduction algorithms to explore the relationship between variables in our dataset's feature space. 
 
-For our supervising learning, we explored various algorithms to help predict crime severity across neighborhoods and time. In our record-based datasets, we employed classification methods to predict crime category of different crime occurrences. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighborhoods on different days. 
+For our supervised learning, we explored various algorithms to help predict crime severity across neighborhoods and time. In our record-based datasets, we employed classification methods to predict crime category of different crime occurrences. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighborhoods on different days. 
 
 Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
 
 #### What is new in our approach?
 We generated a crime score for each neighborhood and for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score which accounts for severity of different crimes. This feature was created to encapsulate the level of crime in a neighborhood and/or on a given day in a single value. We felt that using this crime score as our predictor feature brought us closer to our use case of helping civilians and the police force be able to determine crime across time and neighborhoods.
 
-We grouped types of crime into four crime categories based on our research and opinions on the severity of crimes. We then associated a weight to each category, and increased weight by order of 10 for more severe crimes.
+We grouped types of crime into four categories based on our research and opinions on the severity of crimes. We then associated a weight to each category, and increased weight by order of 10 for more severe crimes.
 
  Category |     Crimes in Category     |   Weight
  :--------|:--------------------------:|-------------:
