@@ -71,6 +71,10 @@ Crime score is calculated as a weighted sum of crime category counts in a partic
 
 In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
 
+2008-2018            |  2019
+:-------------------------:|:-------------------------:
+![](images/Unsupervised_Algs/percentcomp_histogram.png)  |  ![](images/Unsupervised_Algs/percentcomp2019_histogram.png)
+
 ![Percent Composition Histogram](images/Unsupervised_Algs/percentcomp_histogram.png) ![Percent Composition Histogram2](images/Unsupervised_Algs/percentcomp2019_histogram.png)
 
 ![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
