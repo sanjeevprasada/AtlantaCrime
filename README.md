@@ -52,15 +52,22 @@ Year  | Month |  Day  | Day of Week  | Category 1 | Category 2 | Category 3 | Ca
 It is important to cluster based on location and time, as they are relevant features of a crime’s occurrence and are useful for a police force’s patrol. Hence, the mean shift algorithm would be useful as one of the unsupervised learning methods to explore, in addition to k-means clustering. To finishAs for supervising learning techniques, decision trees have been used as a means of classification [2, 4]. Utilizing the severity of a crime served beneficial to the analysis. The decision tree works well, so naturally a random forest algorithm will supplement crime analysis further. Lastly, we can explore the accuracy given by a Naive Bayes Classifier. All algorithms need at least half of the available training data in order to build a successful set of clusters or prediction model to suffice for trends for crimes in future years, and to provide a police department with the necessary information on how they should run their patrol. Throughout our modeling and data pre-processing, we used primarily Python, along with a few Python packages: sci-kit learn, sci-py, pandas, and numpy.
 
 #### What is new in our approach?
-We generated a crime score for each neighborhood for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score including heavy weightage for the most severe crimes. We classified each crime that occured into one of these categories.
+We generated a crime score for each neighborhood and for each day. This is our "secret sauce". We believe that in order to label locations as __hotspots__, we needed to aggregate a score which accounts for severity of different crimes. This feature was created to encapsulate the level of crime in a neighborhood and/or on a given day in a single value. We felt that using this crime score as our predictor feature brought us closer to our use case of helping civilians and the police force be able to determine crime across time and neighborhoods.
 
- Category |     Crimes in Category     |   Weightage
+We grouped types of crime into four crime categories based on our research and opinions on the severity of crimes. We then associated a weight to each category, and increased weight by order of 10 for more severe crimes.
+
+ Category |     Crimes in Category     |   Weight
  :--------|:--------------------------:|-------------:
  1        | homicides, manslaughter    | 1000x
  2        | aggravated assault, robbery| 100x
  3        | burgulary, auto-theft      | 10x
  4        | larceny                    | 1x
 
+ _Crime Score Calculation_:
+
+$$/text{Crime Score} = 1000*/text{Category 1 Counts} + 100*/text{Category 2 Counts} + 10*/text{Category 3 Counts} + 1*/text{Category 4 Counts} $$
+
+In our record-based datasets, we employed classification methods to predict crime category of different crime occurenes. In our count-based datasets, we employed regression methods to predict the calculated crime score of different neighbors on different days.
 
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
