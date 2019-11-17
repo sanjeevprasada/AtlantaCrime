@@ -95,7 +95,6 @@ In our record-based datasets, we employed classification methods to predict crim
 
  __Bottom 5 Crime Scores:__
 
-<p align="center">
  Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
  :--------|:--------------------:|-------------:|-------------:
  200      | Edmund Park          | 24           | 10
@@ -103,7 +102,7 @@ In our record-based datasets, we employed classification methods to predict crim
  198      | Carroll Heights      | 31           | 0
  197      | Englewood Manor      | 110          | 0
  196      | Horseshoe Community  | 129          | 10
-</p>
+
 
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
