@@ -77,6 +77,12 @@ In our record-based datasets, we employed classification methods to predict crim
 
 ![Percent Composition Histogram](images/Unsupervised_Algs/percentcomp_histogram.png) ![Percent Composition Histogram2](images/Unsupervised_Algs/percentcomp2019_histogram.png)
 
+<p float="left">
+  <img src="/images/Unsupervised_Algs/percentcomp_histogram.png" width="100" />
+  <img src="/img2.png" width="100" /> 
+  <img src="images/Unsupervised_Algs/percentcomp2019_histogram.png" width="100" />
+</p>
+
 ![Crime Score Histogram](images/Unsupervised_Algs/crimescore_histogram.png)
 ![Crime Score Histogram2](images/Unsupervised_Algs/crimescore2019_histogram.png)
 
