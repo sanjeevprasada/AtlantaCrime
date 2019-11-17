@@ -22,12 +22,11 @@ Using our initial record-based dataset, we created count-based datasets to enabl
 
 ### Original Dataset
 
- Report Number | Occur Date | Occur Time | Neighborhood |   UCR Literal       | Latitude | Longitude 
- ------------- |:----------:|:----------:|:------------:|:-------------------:|:--------:|:---------:
- 090010930     | 2009-01-01 |    1145    | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
- 090011083     | 2009-01-01 |    1330    | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
- 090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
- ...           |    ...     | ...        | ...          | ...                 | ...      | ...
+ Report Number | Report Date | Occur Date | Occur Time | Possible Date | Possible Time | Neighborhood | UCR Literal | Latitude | Longitude 
+ ------------- |:----------:|:----------:|:----------:|:----------:|:----------:|:------------:|:---------------:|:--------:|:---------:
+ 090010930     | 2009-01-01 | 2009-01-01 |    1145    | 2009-01-01 | 1148 | Greenbriar   | LARCENY NON-VEHICLE | 33.69   | -84.49
+ 090011083     | 2009-01-01 | 2009-01-01 |    1330    | 2009-01-01 | 1330 | Downtown     | LARCENY NON-VEHICLE | 33.75   | -84.39  090011208     | 2009-01-01 | 2009-01-01 |    1500    | 2009-01-01 | 1520 | Adamsville   | LARCENY NON-VEHICLE | 33.76   | -84.50    
+ ...           |    ...     |    ...     | ...        |    ...     |    ...     | ...          | ...                 | ...      | ...
 
 ### Unsupervised algorithms preprocessed dataset
 
