@@ -83,7 +83,6 @@ In our record-based datasets, we employed classification methods to predict crim
 
  __Top 5 Crime Scores:__
 
-<p align="center">
  Rank     |     Neighborhood     |2008-2019 Sum | 2019 Sum (YTD)
  :--------|:--------------------:|-------------:|-------------:
  1        | Downtown             | 366925        | 24984
@@ -91,7 +90,7 @@ In our record-based datasets, we employed classification methods to predict crim
  3        | West End             | 186872        | 9031
  4        | Old Fourth Ward      | 182502        | 11441
  5        | Grove Park           | 155795        | 9488
-</p>
+
 
  __Bottom 5 Crime Scores:__
 
