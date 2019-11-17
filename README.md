@@ -159,8 +159,6 @@ Lastly, the RMSE values showed that Random Forest had the lowest error, when reg
 
 ![Metric 3](images/Supervised_Algs/times.png)
 
-![Metric 4](images/Supervised_Algs/log_times.png)
-
 ## Discussion 
 True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
 
