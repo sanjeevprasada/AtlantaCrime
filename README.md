@@ -78,7 +78,6 @@ In our record-based datasets, we employed classification methods to predict crim
 
 <p float="left">
   <img src="/images/Unsupervised_Algs/percentcomp_histogram.png" width="100" />
-  <img src="/img2.png" width="100" /> 
   <img src="images/Unsupervised_Algs/percentcomp2019_histogram.png" width="100" />
 </p>
 
