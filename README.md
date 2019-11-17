@@ -240,7 +240,7 @@ Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 36
 
 
 
-Contributions from each team member:
+### Contributions from each team member:
 1. Gabriel Leventhal-Douglas: Unsupervised learning and GitHub pages
 2. Abdurrahmane Rikli: Unsupervised learning and visualizations
 3. Sanjeev Prasada: Preprocessing and GitHub pages
