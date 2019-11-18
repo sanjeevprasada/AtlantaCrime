@@ -268,7 +268,7 @@ ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print.
 [5] Bappee, Fateha Khanam, Amílcar Soares Júnior, and Stan Matwin. "Predicting Crime Using Spatial Features."
 Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.  
 
-Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Python, Jupyter,
+Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Jupyter, Python, Bash.
 
 
 ### Contributions from each team member:
