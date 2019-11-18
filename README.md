@@ -128,9 +128,9 @@ Each neighborhood in Atlanta was colored based on the intensity of the crime cou
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
 This first image is a visualization of our ground truth data from the 2019 dataset.
 
-#### 2019 Predicted Data using ML
+#### 2019 Predicted Data using ML (Naive Bayes)
 ![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)
-Here is our machine learning model's predicted 2019 data.
+Here is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our various methods.
 
 ## Unsupervised Methods
 
