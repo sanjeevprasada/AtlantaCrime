@@ -22,12 +22,12 @@ Using our initial record-based dataset, we created count-based datasets to enabl
 
 ### Original Dataset
 
- Report Number | Occur Date | Occur Time | Neighborhood |   UCR Literal       | Latitude | Longitude 
- ------------- |:----------:|:----------:|:------------:|:-------------------:|:--------:|:---------:
- 090010930     | 2009-01-01 |    1145    | Greenbriar   | LARCENY NON-VEHICLE | 33.69    | -84.49    
- 090011083     | 2009-01-01 |    1330    | Downtown     | LARCENY NON-VEHICLE | 33.75    | -84.39    
- 090011208     | 2009-01-01 |    1500    | Adamsville   | LARCENY NON-VEHICLE | 33.76    | -84.50    
- ...           |    ...     | ...        | ...          | ...                 | ...      | ...
+Report Number | Report Date | Occur Date | Occur Time | Possible Date | Possible Time | Beat | Apartment Office Prefix | Apartment Number | Location | Shift Occurence | Location Type | UCR Literal | UCR # | IBR Code | Neighborhood | NPU | Latitude | Longitude
+------------- |:-----------:|:----------:|:----------:|:-------------:|:-------------:|:----:|:-----------------------:|:----------------:|:--------:|:---------------:|:-------------:|:-----------:|:-----:|:--------:|:------------:|:---:|:--------:|:--------:
+090010930 | 2009-01-01 | 2009-01-01 | 1145 | 2009-01-01 | 1148 | 408 |  |  | 2841 GREENBRIAR PKWY | Day Watch | 8 | LARCENY-NON VEHICLE | 0630 | 2303 | Greenbriar | R | 33.688450000000003 | -84.493279999999999
+090011083 | 2009-01-01 | 2009-01-01 | 1330 | 2009-01-01 | 1330 | 506 |  |  | 12 BROAD ST SW | Day Watch | 9 | LARCENY-NON VEHICLE | 0630 | 2303 | Downtown | M | 33.7532 | -84.392009999999999
+090011208 | 2009-01-01 | 2009-01-01 | 1500 | 2009-01-01 | 1520 | 413 |  |  | 3500 MARTIN L KING JR DR SW | Unknown | 8 | LARCENY-NON VEHICLE | 0630 | 2303 | Adamsville | H | 33.757350000000002 | -84.50282  
+ ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ...
 
 ### Unsupervised algorithms preprocessed dataset
 
@@ -129,9 +129,9 @@ Each neighborhood in Atlanta was colored based on the intensity of the crime cou
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
 This first image is a visualization of our ground truth data from the 2019 dataset.
 
-#### 2019 Predicted Data using 
-![Crime Score 2019 Prediction](images/visualization/crime_scores_2019prediction.png)
-Here is our machine learning model's predicted 2019 data.
+#### 2019 Predicted Data using ML (Naive Bayes)
+![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)
+Here is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our various methods.
 
 ## Unsupervised Methods
 Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN).  
@@ -250,7 +250,7 @@ Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 36
 Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Python, Jupyter,
 
 
-Contributions from each team member:
+### Contributions from each team member:
 1. Gabriel Leventhal-Douglas: Unsupervised learning and GitHub pages
 2. Abdurrahmane Rikli: Unsupervised learning and visualizations
 3. Sanjeev Prasada: Preprocessing and GitHub pages
