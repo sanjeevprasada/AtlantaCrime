@@ -147,8 +147,8 @@ Features selected for PCA:
 Numerical features were scaled to unit variance of centered data before performing PCA.  
 You will notice cobra-clean2019.csv has less components due to `['Year']` being removed from features (as all data is from 2019).  
 
-![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2009.png)  ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009_v2.png)        
-![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2019.png)  ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019_v2.png)     
+![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2009.png) ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009_v2.png)        
+![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2019.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019_v2.png)     
 
 Scatter plots of the first two components show little separation between groups.    
 Exploring explained variance ratios per component reveal a similar relative margin between components. Therefore we need to maximize our feature inclusion, and are justified in regularizing our data.     
@@ -161,7 +161,7 @@ We utilized Elbow Method plots to determine optimal epsilon given min_samples fo
 Clusters were plotted separately and overlayed with crime categories to determine any location trends, yielding disparate results. DBSCAN followed a similar trend and did not yield much visual insight.  
 
 KMeans Location Results  
-![KMeans Scatter](images/Unsupervised_Algs/KMeans_updated.png)  ![KMeans Elbow]((images/Unsupervised_Algs/KMeans_Elbow.png)
+![KMeans Scatter](images/Unsupervised_Algs/KMeans_updated.png) ![KMeans Elbow]((images/Unsupervised_Algs/KMeans_Elbow.png)
 
 
 Mean Shift Location Results  
@@ -171,7 +171,8 @@ Mean Shift Location Results
 ### Multi-Feature KMeans Clustering With & Without PCA
 
 As location-based clustering, and PCA on it's own yielded little utility in our overall project goal, we then proceeded with multi-feature exploratory KMeans clustering.  
-Features included were consistent from the previous PCA method: `['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']`  
+Features included were consistent from the previous PCA method:  
+`['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']`  
 Initially KMeans was conducted on all normalized features, and all combinations of features were plotted and colored by associated cluster. Then in an attempt to further explore our data, we performed PCA prior to clustering. Each cluster was plotted and overlayed with colors corresponding to crime category (indexed from previous operations). However, as our results below indicate, this approach also yielded little insight.  
 
 ![PCA KMeans Scatter](images/Unsupervised_Algs/PCA_KMeans_Scatter.png)  
