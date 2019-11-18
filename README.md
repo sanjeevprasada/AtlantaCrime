@@ -186,6 +186,17 @@ To include more features within our unsupervised approach we decided to generate
 
 First we normalized our data to a standard scaler, chose an optimal K-value from our Elbow Method, and fit our data to KMeans. New features composed of the Euclidean Distance of each point to all K centroids were appended to data for downstream supervised modeling.  
 
+Below is an example of centroid distances for k=5;
+```[[4.64945542 4.92603094 3.89242432 4.1927677  3.82322197]
+ [3.26341651 3.62473279 2.11487911 3.34807239 3.54762707]
+ [3.71797698 3.92761554 2.80509173 4.22888586 4.6169649 ]
+ ...
+ [4.24428991 3.75802578 4.93996711 5.15083855 4.34089772]
+ [3.99745754 3.69106996 4.71445031 3.46539923 3.78381946]
+ [3.52901828 2.79375948 4.10487318 3.85125222 4.04122897]]
+```
+
+
 ## Supervised Methods
 Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
 
