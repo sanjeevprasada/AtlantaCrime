@@ -31,12 +31,12 @@ Using our initial record-based dataset, we created count-based datasets to enabl
 
 ### Unsupervised algorithms preprocessed dataset
 
-Occur Date  | Neighborhood|   UCR Literal       | Latitude | Longitude  | Shift Occurrence 
- -----------|:-----------:|:-------------------:|:--------:|:----------:|:----------------:
- 2009-01-01 | Greenbriar  | LARCENY NON-VEHICLE | 33.69    | -84.49     |  Day
- 2009-01-01 | Downtown    | LARCENY NON-VEHICLE | 33.75    | -84.39     |  Day
- 2009-01-01 | Adamsville  | LARCENY NON-VEHICLE | 33.76    | -84.50     |  Day
- ...        | ...         |    ...              | ...      | ...        |  ...  
+Occur Date  | Occur Time  | Day of Week  |	Month 	| Day of Month |	Year  | Latitude   | Longitude  |  Crime Category
+ -----------|:-----------:|:------------:|:--------:|:------------:|:--------:|:----------:|:----------:|:---------------:
+ 2009-01-01 | 0745		  | 	1	     |	  3		|		23	   |	18    |   33.69    |  -84.49    |  	4
+ 2009-01-01 | 1030		  |	    6	     |    7		|		4	   |    9	  |   33.82	   |  -84.39    |  	4
+ 2009-01-01 | 1615		  |		0	     |    9		|		16	   |	13    |   33.76	   |  -84.50    |  	3
+ ...        | ...         |    ...       |   ...    |    ...       |   ...	  |		...    |  ...  		| 	...
 
 ### Supervised algorithms dataset
 
@@ -134,47 +134,57 @@ This first image is a visualization of our ground truth data from the 2019 datas
 Here is our machine learning model's predicted 2019 data.
 
 ## Unsupervised Methods
+Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN).  
 
-### PCA
-Initially we wanted to explore the features of our data to determine which may be most relevant. 
 
-As mentioned in our approach, we used crime categories to preprocess our data into bins of crime type. 
+### Dimensionality Reduction
+Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance. LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
 
-Here we computed PCA with all numerically independent features:  
-`['Occur Time', 'UCR #', 'Longitude', 'Latitude', 'Day of Week']` on 
-+ Cleaned crime data for 2009-2018
-+ Cleaned crime data for 2019  
+Features selected for PCA:  
+`['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']` on  
++ Cleaned crime data for COBRA-2009-2018  
++ Cleaned crime data for COBRA-2019  
 Numerical features were scaled to unit variance of centered data before performing PCA.  
-`X = sk.preprocessing.StandardScaler().fit_transform(data)`
+You will notice cobra-clean2019.csv has less components due to `['Year']` being removed from features (as all data is from 2019).  
 
-![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019.png)
+![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2009.png) ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009_v2.png)        
+![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2019.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019_v2.png)     
+
+Scatter plots of the first two components show little separation between groups.    
+Exploring explained variance ratios per component reveal a similar relative margin between components. Therefore we need to maximize our feature inclusion, and are justified in regularizing our data.     
+
+### Location-based Clustering    
+
+Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.  
+We utilized Elbow Method plots to determine optimal epsilon given min_samples for DBSCAN, and optimal K-value for KMeans.  
+
+Clusters were plotted separately and overlayed with crime categories to determine any location trends, yielding disparate results. DBSCAN followed a similar trend and did not yield much visual insight.  
+
+<center>KMeans Location Results</center>  
+![KMeans Scatter](images/Unsupervised_Algs/KMeans_updated.png)  ![KMeans Elbow]((images/Unsupervised_Algs/KMeans_Elbow.png)
 
 
-A relatively even distribution of explained variance ratios across principal components indicates we need to include all, if not more, features within our predictive model.
-
-### Location-based Clustering 
-Additionally we wanted to look at clustering algorithms such as DBSCAN, K-Means and Mean Shift to determine potential associations between features. 
-
-Our intial thoughts were to cluster by longitude and latitude to see if there was any uneven location distribution.
-We utilized K-Distance Plots with the Elbow Method to determine optimal epsilon given min_samples for DBSCAN.
-
-DBSCAN, Mean Shift and K-Means did not yield vert meaningful results for location-based clustering in regards to crime distribution. 
-
-Mean shift results
-
+<center>Mean Shift Location Results</center>  
 ![Mean Shift](images/Unsupervised_Algs/meanshift.png)
 
-KMeans results
-![KMeans](images/Unsupervised_Algs/kmeans.png)
+
+### Multi-Feature KMeans Clustering With & Without PCA
+
+As location-based clustering, and PCA on it's own yielded little utility in our overall project goal, we then proceeded with multi-feature exploratory KMeans clustering.  
+Features included were consistent from the previous PCA method: `['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']`  
+Initially KMeans was conducted on all normalized features, and all combinations of features were plotted and colored by associated cluster. Then in an attempt to further explore our data, we performed PCA prior to clustering. Each cluster was plotted and overlayed with colors corresponding to crime category (indexed from previous operations). However, as our results below indicate, this approach also yielded little insight.  
+
+![PCA KMeans Scatter](images/Unsupervised_Algs/PCA_KMeans_Scatter.png)  
 
 
-### Multiple-Feature Clustering 
+### Feature Generation for Supervised Methods
 
-To include more features within our unsupervised approach we decided to compute KMeans for our preprocessed supervised datasets. 
-After computing an optimal K value from an elbow plot of squared distances, we created new features composed of the Euclidean Distance of each point to all centroids.
+To include more features within our unsupervised approach we decided to generate new features with KMeans for our supervised methods. This would hopefully increase the amount of information, and accuracy potentially achieved downstream.    
+
+First we normalized our data to a standard scaler, chose an optimal K-value from our Elbow Method, and fit our data to KMeans. New features composed of the Euclidean Distance of each point to all K centroids were appended to data for downstream supervised modeling.  
 
 ## Supervised Methods
-Our tech stack for the supervised methods were sklearn in Python. Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
+Some initial preprocessing is done with the data before the entered into the model. We utilize 10% of the data for testing, and 90% for training. This is the first time we use the Crime Score. We created this metric after obtaining domain knowledge of severity in crimes. Understanding the judicial system's consequences for certain crimes, we were able to manufacture a crime score for each neighborhood to took the severity of the crime into account. This is unique part of our project that aims to help map the toughest crime hotspots to police officers. 
 
 
 
@@ -222,22 +232,22 @@ Although we had access to 300,000+ rows of data, access to more data/features wo
 
 ## References 
 [1] Schiller, Andrew. "Atlanta, GA Crime Rates & Statistics." NeighborhoodScout. NeighborhoodScout, 10 June 2019. Web. 30
-Sept. 2019. </br>
+Sept. 2019.  
 
 [2] Mcclendon, Lawrence, and Natarajan Meghanathan. "Using Machine Learning Algorithms to Analyze Crime
-Data." Machine Learning and Applications: An International Journal 2.1 (2015): 1-12. Print. </br>
+Data." Machine Learning and Applications: An International Journal 2.1 (2015): 1-12. Print.  
 
 [3] Lin, Ying-Lung, Meng-Feng Yen, and Liang-Chih Yu. "Grid-Based Crime Prediction Using Geographical Features."
-ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print. </br>
+ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print.  
 
 [4] Kim, Suhong, Param Joshi, Parminder Singh Kalsi, and Pooya Taheri. "Crime Analysis Through Machine Learning."
 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference (IEMCON)
-(2018): n. pag. Print. </br>
+(2018): n. pag. Print.  
 
 [5] Bappee, Fateha Khanam, Amílcar Soares Júnior, and Stan Matwin. "Predicting Crime Using Spatial Features."
-Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.
+Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.  
 
-
+Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Python, Jupyter,
 
 
 Contributions from each team member:
@@ -247,4 +257,4 @@ Contributions from each team member:
 4. Aayush Dubey: Supervised learning and hypertuning parameters for model
 5. Kevin Tynes: Unsupervised learning and preprocessing
 
-Although members led different portions of our project, we all believe that our individuals contributions were equivalent.
+Although members led different portions of our project, we all believe that our individual contributions were equivalent.
