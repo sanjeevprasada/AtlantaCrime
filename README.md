@@ -210,9 +210,9 @@ As for the accuracy metrics, Naive-Bayes Classifier and Logistic Regression were
 
 Lastly, the RMSE values showed that Random Forest had the lowest error, when regressing the crime scores. The highest RMSE value was from Logistic Regression. In conclusion, we prefer the Naive Bayes Classifier for determining the categories and Random Forest for calculating the crime scores.
 
-![Metric 1](images/Supervised_Algs/apr_categories.png)
+![Metric 1](images/Supervised_Algs/apr_categories.png)  
 
-![Metric 2](images/Supervised_Algs/rmse.png)
+![Metric 2](images/Supervised_Algs/rmse.png)  
 
 ![Metric 3](images/Supervised_Algs/times.png)
 
