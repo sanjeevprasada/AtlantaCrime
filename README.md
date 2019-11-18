@@ -220,18 +220,25 @@ When it comes to time, Naive-Bayes and Linear Regression are the two quickest al
 #### Accuracy, Precision, Recalls of Crime Categories
 ![Metric 2](images/Supervised_Algs/apr_categories.png)
 
-As for the accuracy metrics when classifying the crime category, Naive-Bayes Classifier ended up being the highest, and the only algorithm able to obtain a higher accuracy than the accuracy bound (0.639). The accuracy bound is calculated by classifying all data points as the most popular category in the test set, which ended up being Category 4, and obtaining the accuracy from there. However, the issue is that Naive Bayes mostly classified every entry correctly as Category 4 (the recalls are 0.999 without the five features and 0.998 with the features), which ended up being it having an issue with multi-labeled classification: it never predicted 1s or 2s.
+As for the accuracy metrics when classifying the crime category, Naive-Bayes Classifier ended up being at 0.639 for both of its models, and the only algorithm able to obtain an accuracy at least higher than the accuracy bound (0.639). The accuracy bound is calculated by classifying all data points as the most popular category in the test set, which ended up being Category 4, and obtaining the accuracy from there. However, the issue is that Naive Bayes classified almost all entry as Category 4 (the recalls are 0.999 without the five features and 0.998 with the features), which ended up having an issue with multi-labeled classification: it never predicted 1s or 2s, but only 3s and 4s.
 
-Additionally, the Random Forest models ended up doing better with features than without, whereas all the other models had less consistent improvements. Despite this, Decision Trees had a much faster run and had relatively the same precision, which may seem to outperform the Random Forests when it comes to having an urgent need of prediction.
+Additionally, the Random Forest models ended up doing better with features than without, whereas all the other models had less consistent improvements. Despite this, Decision Trees had a much faster run and had relatively the same precision, which may seem to outperform the Random Forests when it comes to having an urgent need of prediction. Despite this, Random Forest still had accuracies of 0.471 without factoring the features and 0.515 with the new features, which may be low.
 
-As for Linear Regressions, it has the poorest performance across all the models.
+As for Linear Regressions, it has the poorest performance across all the models. Considering that each of the other models can be argued for being the preferred model, it was not worth considering running any regression model and rounding its values to fit a classification model.
+
+#### Evaluation of the Models
+Our preferred supervised method of choice for category classification is Random Forest since it had a more distributed range of choosing categories and improved when adding the features. That being said, Decision Trees aren't that bad either, since it can give a close precision in a much quicker time.
+
+As for crime scores, Linear Regression was the most useful since it had the quickest runtimes and lowest RMSE values of 42.62 for both of its models. There was virtually no other algorithm, out of the four, that could've been used.
+
+The question of whether to add the clustering features or not still remains uncertain. It seems that for Random Forest it would be acceptable, though the other algorithms would do the same, if not better, without the features.
 
 #### RMSE of Crime Scores
 ![Metric 3](images/Supervised_Algs/rmse.png)
 
 Lastly, the RMSE values showed that Linear Regression had the lowest error, when regressing the crime scores, and more importantly had no increase in its RMSE when adding the clustering features. And, because of its fast runtime, it would suggest that Linear Regression ought to be used for crime score estimations and less for crime category classification. The highest RMSE values were from Decision Trees, though the difference between the others, even when accounting for the added features, might not necessarily be that much.
 
-## Discussion 
+## Discussion
 True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
 
 We evaluated our approach using accuracy, precision, and recall for classification of categories. In regression of crime scores, our metric is RMSE.
@@ -239,7 +246,8 @@ We evaluated our approach using accuracy, precision, and recall for classificati
 ## Conclusion
 
 #### Major Achievement
-Our major achievement was our supervised model using crime score. Naive Bayes Classifier was our metric of choice. NBC was the 2nd quickest to run, it was also the 2nd best accuracy as well. Logistic Regression classification gave us our best accuracy of 0.637. The predicted values would be 1, 2, 3, or 4 based on the day and neighborhood. Classification methods and metrics that are above the lower bound that we set for. 
+Our major achievement was our supervised model using crime score, and our ability to understand more about Atlanta crimes and how one can predict the occurrence. The unsupervised algorithms were also useful in examining the intensity of each neighborhood.
+
 #### Future work
 Without question, our methodology could be improved. Given more time and resources, we would plan to merge our dataset with other datasets regarding Atlanta's location specifics. Giving neighborhoods more features and more variability would only help our model learn and raise our accuracy. Another thing we may consider would be implementing similar prediction using deep learning neural networks.
 
