@@ -77,12 +77,12 @@ Crime score is calculated as a weighted sum of crime category counts in a partic
 
 
 <p float="left">
-  <img src="images/Unsupervised_Algs/percentcomp_histogram.png" height.= "45%" width="45%" />
+  <img src="images/Unsupervised_Algs/percentcomp_histogram.png" height= "45%" width="45%" />
   <img src="images/Unsupervised_Algs/percentcomp2019_histogram.png" height = "45%" width="45%" />
 </p>
 
 <p align="center">
-  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height.= "75%" width="75%" />
+  <img src="images/Unsupervised_Algs/crimescore_histogram.png" height = "75%" width="75%" />
   <img src="images/Unsupervised_Algs/crimescore2019_histogram.png" height = "75%" width="75%" />
 </p>
 
