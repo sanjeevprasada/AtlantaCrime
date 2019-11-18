@@ -186,7 +186,7 @@ To include more features within our unsupervised approach we decided to generate
 
 First we normalized our data to a standard scaler, chose an optimal K-value from our Elbow Method, and fit our data to KMeans. New features composed of the Euclidean Distance of each point to all K centroids were appended to data for downstream supervised modeling.  
 
-Below is an example of centroid distances for k=5;
+Below is an example of centroid distances for k=5;  
 ```
 [[4.64945542 4.92603094 3.89242432 4.1927677  3.82322197]
  [3.26341651 3.62473279 2.11487911 3.34807239 3.54762707]
