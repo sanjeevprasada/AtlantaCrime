@@ -147,8 +147,8 @@ Features selected for PCA:
 Numerical features were scaled to unit variance of centered data before performing PCA.  
 You will notice cobra-clean2019.csv has less components due to `['Year']` being removed from features (as all data is from 2019).  
 
-![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2009.png) ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009_v2.png)        
-![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter-cobra-clean2019.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019_v2.png)     
+![PCA Scatter 2009](images/Unsupervised_Algs/PCA_scatter_cobra-clean2009.png) ![PCA explained ratio 2009](images/Unsupervised_Algs/PCA_cobra-clean2009_v2.png)        
+![PCA Scatter 2019](images/Unsupervised_Algs/PCA_scatter_cobra-clean2019.png) ![PCA explained ratio 2019](images/Unsupervised_Algs/PCA_cobra-clean2019_v2.png)     
 
 Scatter plots of the first two components show little separation between groups.    
 Exploring explained variance ratios per component reveal a similar relative margin between components. Therefore we need to maximize our feature inclusion, and are justified in regularizing our data.     
@@ -161,7 +161,7 @@ We utilized Elbow Method plots to determine optimal epsilon given min_samples fo
 Clusters were plotted separately and overlayed with crime categories to determine any location trends, yielding disparate results. DBSCAN followed a similar trend and did not yield much visual insight.  
 
 KMeans Location Results  
-![KMeans Scatter](images/Unsupervised_Algs/KMeans_updated.png) ![KMeans Elbow]((images/Unsupervised_Algs/KMeans_Elbow.png)
+![KMeans Scatter](images/Unsupervised_Algs/KMeans_updated.png) ![KMeans Elbow](images/Unsupervised_Algs/KMeans_Elbow.png)
 
 
 Mean Shift Location Results  
