@@ -129,18 +129,19 @@ Each neighborhood in Atlanta was colored based on the intensity of the crime cou
 
 #### 2019 Actual Data (Ground Truth)
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)  
-This image is a visualization of our ground truth data from the 2019 dataset.
 
 #### 2019 Predicted Data using ML (Naive Bayes)
 ![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)  
 
-This image is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our attempted methods.
+This image is our machine learning model's predicted 2019 data.  
+We found Naive Bayes to have the higher accuracy among our attempted methods.  
 
 ## Unsupervised Methods
 Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN). Data was preprocessed with helper functions to parse features from `['Occur Date']`
 
 ### Dimensionality Reduction
-Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance. LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
+Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance.  
+LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
 
 Features selected for PCA:  
 `['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']` on  
@@ -261,7 +262,7 @@ ISPRS International Journal of Geo-Information 7.8 (2018): 298. Print.
 [5] Bappee, Fateha Khanam, Amílcar Soares Júnior, and Stan Matwin. "Predicting Crime Using Spatial Features."
 Advances in Artificial Intelligence Lecture Notes in Computer Science (2018): 367-73. Print.  
 
-Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Python, Jupyter,
+Tech Stack Utilized: SciKit Learn, Seaborn, Matplotlib, Pandas, Numpy, Jupyter, Python, Bash. 
 
 
 ### Contributions from each team member:
