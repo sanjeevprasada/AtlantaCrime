@@ -197,14 +197,13 @@ Some initial preprocessing is done with the data before the entered into the mod
 1. Decision Tree
 2. Random Forest
 3. Naive-Bayes Classifier
-4. Logistic Regression
-5. Linear Regression
+4. Linear Regression
 
 According to the location and time, specifically the neighorhood, day of the week, the month, and time in which the crime occurred, we are able to predict the most likely category of the crime and regress on the crime scores.
 
 After our data was preprocessed, we built classification and regression methods using Decision Trees, Random Forest, Naive-Bayes, Linear Regression and Logistic Regression. We also performed Cross-Validation on all of the models and their respective time, accuracy/precision/recall metrics, and RMSE plots are displayed below. 
 
-We attempted to do Support Vector Machine but it took way too long and had low performance. Because it led to unsatisfactory results, we removed it from our results section and chose to move forward.
+We attempted to do Support Vector Machine and Logistic Regression models, but they took way too long and had low performances. Because it led to unsatisfactory results, we removed them from our results section and chose to move forward.
 
 When it comes to time, Naive-Bayes and Linear Regression are the two quickest algorithms that we ran, whereas Logistic Regression was the slowest. 
 
@@ -216,7 +215,7 @@ Lastly, the RMSE values showed that Random Forest had the lowest error, when reg
 
 ![Metric 2](images/Supervised_Algs/rmse.png)
 
-![Metric 3](images/Supervised_Algs/times.png)
+![Metric 3](images/Supervised_Algs/elapsed_times.png)
 
 ## Discussion 
 True crime prediction entails a complex set of variables that may not be publicly available for intrepid data scientists. Socioeconomic factors may be difficult to aggregate, while psychological motivators are highly abstract. Identification of crime hotspots allows law enforcement agencies to allocate police routes and other crime inhibiting factors, such as CCTV cameras, lights or neighborhood watches, more effectively [3]. Crime inciters, such as gang territories, bars, and construction sites can be monitored more frequently. 
