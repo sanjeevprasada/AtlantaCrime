@@ -22,11 +22,12 @@ Using our initial record-based dataset, we created count-based datasets to enabl
 
 ### Original Dataset
 
- Report Number | Report Date | Occur Date | Occur Time | Possible Date | Possible Time | Neighborhood | UCR Literal | Latitude | Longitude 
- ------------- |:----------:|:----------:|:----------:|:----------:|:----------:|:------------:|:---------------:|:--------:|:---------:
- 090010930     | 2009-01-01 | 2009-01-01 |    1145    | 2009-01-01 | 1148 | Greenbriar   | LARCENY NON-VEHICLE | 33.69   | -84.49
- 090011083     | 2009-01-01 | 2009-01-01 |    1330    | 2009-01-01 | 1330 | Downtown     | LARCENY NON-VEHICLE | 33.75   | -84.39  090011208     | 2009-01-01 | 2009-01-01 |    1500    | 2009-01-01 | 1520 | Adamsville   | LARCENY NON-VEHICLE | 33.76   | -84.50    
- ...           |    ...     |    ...     | ...        |    ...     |    ...     | ...          | ...                 | ...      | ...
+Report Number | Report Date | Occur Date | Occur Time | Possible Date | Possible Time | Beat | Apartment Office Prefix | Apartment Number | Location | Shift Occurence | Location Type | UCR Literal | UCR # | IBR Code | Neighborhood | NPU | Latitude | Longitude
+------------- |:-----------:|:----------:|:----------:|:-------------:|:-------------:|:----:|:-----------------------:|:----------------:|:--------:|:---------------:|:-------------:|:-----------:|:-----:|:--------:|:------------:|:---:|:--------:|:--------:
+090010930 | 2009-01-01 | 2009-01-01 | 1145 | 2009-01-01 | 1148 | 408 |  |  | 2841 GREENBRIAR PKWY | Day Watch | 8 | LARCENY-NON VEHICLE | 0630 | 2303 | Greenbriar | R | 33.688450000000003 | -84.493279999999999
+090011083 | 2009-01-01 | 2009-01-01 | 1330 | 2009-01-01 | 1330 | 506 |  |  | 12 BROAD ST SW | Day Watch | 9 | LARCENY-NON VEHICLE | 0630 | 2303 | Downtown | M | 33.7532 | -84.392009999999999
+090011208 | 2009-01-01 | 2009-01-01 | 1500 | 2009-01-01 | 1520 | 413 |  |  | 3500 MARTIN L KING JR DR SW | Unknown | 8 | LARCENY-NON VEHICLE | 0630 | 2303 | Adamsville | H | 33.757350000000002 | -84.50282  
+ ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ...
 
 ### Unsupervised algorithms preprocessed dataset
 
