@@ -15,7 +15,9 @@ We reviewed literature of machine learning crime prediction methods using spatia
 Crime statistics -likelihood for the most part- were pridected per 100k people in the state of Mississipi, irrespective of any features aside from the state's crime type statistics in their paper[2]. For the most part, time and space relevant features were examined only within the context of splitting areas into grids, and predicting intensity and displacement[3], although there were some attempts at clustering crime occurrences [5]. Closest to our approach was an attempt at predicting crime occurrences through similar features using KNN and Boosted Decision Tree, although the accuracy was 44% at its highest[4].
 
 ## Dataset (Needs description of features, accessability, etc.)
-Our dataset comes from the Atlanta PD Crime Statistics dataset publicly available on [website](https://www.atlantapd.org/i-want-to/crime-data-downloads). This data is available as two separate datasets 'COBRA-2009-2018' and 'COBRA-2019'. After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft. Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
+Our dataset comes from the Atlanta PD Crime Statistics dataset publicly available on the [Atlanta PD website](https://www.atlantapd.org/i-want-to/crime-data-downloads). This data is available as two separate datasets 'COBRA-2009-2018' and 'COBRA-2019'. After analyzing the Atlanta PD Crime dataset from 2009-2018, the most popular crimes in descending order are larceny from vehicle, larceny non vehicle, burglary at residence, and automobile theft.
+
+Our dataset is record-based; each row in the dataset represents one crime and the features of that crime (represented below in tables). We have a total of 20 features per record and a total of 317,905 records of crime within the Perimeter of Atlanta. There were a few columns we had to remove due a large number of null's and a few rows were removed based on inconsistency of data.
 
 Using our initial record-based dataset, we created count-based datasets to enable us to predict number of crimes that will occur on each day and in each neighborhood. For these datasets, our target features for our supervised models were counts in each crime severity category, and an associated crime score based on these counts.
 
@@ -110,13 +112,13 @@ Crime score is calculated as a weighted sum of crime category counts in a partic
 
 
 ## Visualization
-Crime intensities across the city limits of Atlanta.
+### Crime intensities across the city limits of Atlanta.
 
-These figures of Atlanta are from the dataset 2009-2018 and are visualizing the counts of total crimes occuring.
+These figures of Atlanta are from the 2009-2018 dataset, visualizing the total count of crimes that occurred.
 
 ![Atlanta all categories visualization](images/visualization/Crime_intensities.png?raw=true)
 
-These figures of Atlanta are visualizing the counts of total crime in each crime category.
+These figures of Atlanta visualize the total count of crimes that occurred for each crime-category.
 
 ![Categories](images/visualization/Crime_intensities_all.png?raw=true)
 
@@ -127,19 +129,19 @@ Each neighborhood in Atlanta was colored based on the intensity of the crime cou
 
 #### 2019 Actual Data (Ground Truth)
 ![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
-This first image is a visualization of our ground truth data from the 2019 dataset.
+This image is a visualization of our ground truth data from the 2019 dataset.
 
 #### 2019 Predicted Data using ML (Naive Bayes)
 ![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)
-Here is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our various methods.
+
+This image is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our attempted methods.
 
 ## Unsupervised Methods
 Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN).  
 
 
 ### Dimensionality Reduction
-Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance.  
-LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
+Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance. LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
 
 Features selected for PCA:  
 `['Occur Date','Occur Time','Day of Week','Month','Day of Month','Year','Latitude','Longitude','Crime Category']` on  
