@@ -128,11 +128,11 @@ Shapefiles were sourced from the Atlanta Regional Commission (ARC). They include
 Each neighborhood in Atlanta was colored based on the intensity of the crime count/score, using the seaborn package. For data that was missing from either the ARC Shapefiles or the crime reports, the neighborhoods were intentionally left white. For example, "Airport" is technically a neighborhood on its own in Atlanta, but there were no reported crimes for it in the dataset. In all other cases, the darker colors indicate a higher intensity in crime count/score.
 
 #### 2019 Actual Data (Ground Truth)
-![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)
+![Crime Score 2019 Ground Truth](images/visualization/crime_scores_2019.png)  
 This image is a visualization of our ground truth data from the 2019 dataset.
 
 #### 2019 Predicted Data using ML (Naive Bayes)
-![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)
+![Crime Score 2019 Prediction](images/visualization/crime_scores_2019predicted.png)  
 
 This image is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our attempted methods.
 
