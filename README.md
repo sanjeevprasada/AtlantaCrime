@@ -137,8 +137,7 @@ This image is a visualization of our ground truth data from the 2019 dataset.
 This image is our machine learning model's predicted 2019 data. We found Naive Bayes to have the higher accuracy among our attempted methods.
 
 ## Unsupervised Methods
-Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN).  
-
+Initially we wanted to explore our data more to understand if certain associations of crime category could be inferred from selected features. For unsupervised methods we conducted Dimensionality Reduction (PCA/LDA) and Clustering (KMeans, Mean Shift, and DBSCAN). Data was preprocessed with helper functions to parse features from `['Occur Date']`
 
 ### Dimensionality Reduction
 Within dimensionality reduction we were interested in if certain components/discriminants would contain high explained variance ratios. This would indicate to us which components (or features) may be of relative importance. LDA results were found to be less conclusive than PCA, and were hence not included. We decided to select the most relevant numerical features for our algorithms to include in PCA.     
